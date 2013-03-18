@@ -36,4 +36,5 @@
 
 -(void)disconnectWarp;
 -(void)connectToWarp;
+-(void)onConnectionFailure:(NSDictionary*)messageDict;
 @end

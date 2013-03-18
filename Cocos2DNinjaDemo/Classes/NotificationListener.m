@@ -24,8 +24,10 @@
 -(void)onRoomDestroyed:(RoomData*)roomEvent{
     
 }
--(void)onUserLeftRoom:(RoomData*)roomData username:(NSString*)username{
-    
+-(void)onUserLeftRoom:(RoomData*)roomData username:(NSString*)username
+{
+    //NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:@"Error:",@"title",@"Your enemy left the room!",@"message", nil];
+    //[[AppWarpHelper sharedAppWarpHelper] onConnectionFailure:dict];
 }
 -(void)onUserJoinedRoom:(RoomData*)roomData username:(NSString*)username
 {

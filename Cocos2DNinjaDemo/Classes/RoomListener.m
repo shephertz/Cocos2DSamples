@@ -7,7 +7,7 @@
 //
 
 #import "RoomListener.h"
-
+#import "NFStoryBoardManager.h"
 @implementation RoomListener
 
 @synthesize helper;
@@ -20,10 +20,15 @@
 
 -(void)onSubscribeRoomDone:(RoomEvent*)roomEvent{
     
-    if (roomEvent.result == SUCCESS) {
+    if (roomEvent.result == SUCCESS)
+    {
         //[[WarpClient getInstance]setCustomRoomData:roomEvent.roomData.roomId roomData:@"custom room data set"];
+        NSLog(@"onSubscribeRoomDone  SUCCESS");
+        [[NFStoryBoardManager sharedNFStoryBoardManager] removeGameLoadingIndicator];
     }
-    else {
+    else
+    {
+        NSLog(@"onSubscribeRoomDone  Failed");
     }
 }
 -(void)onUnSubscribeRoomDone:(RoomEvent*)roomEvent{
@@ -45,8 +50,11 @@
         RoomData *roomData = roomEvent.roomData;
         [[WarpClient getInstance]subscribeRoom:roomData.roomId];
         [[AppWarpHelper sharedAppWarpHelper] getAllUsers];
+        NSLog(@".onJoinRoomDone..on Join room listener called Success");
     }
-    else {
+    else
+    {
+        NSLog(@".onJoinRoomDone..on Join room listener called failed");
     }
     
 }

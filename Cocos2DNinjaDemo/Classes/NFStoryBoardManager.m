@@ -99,9 +99,8 @@ static NFStoryBoardManager *nFStoryBoardManager;
         [userNameController release];
         userNameController = nil;
     }
-    [[CCDirector sharedDirector] resume];
-    [[AppWarpHelper sharedAppWarpHelper] connectToWarp];
     
+    [[CCDirector sharedDirector] resume];
     if ([[CCDirector sharedDirector] runningScene])
     {
         [[CCDirector sharedDirector] replaceScene: [HelloWorldScene node]];
@@ -111,6 +110,18 @@ static NFStoryBoardManager *nFStoryBoardManager;
         [[CCDirector sharedDirector] runWithScene: [HelloWorldScene node]];
     }
     
+}
+
+-(void)showGameLoadingIndicator
+{
+    [userNameController showAcitvityIndicator];
+    [[AppWarpHelper sharedAppWarpHelper] connectToWarp];
+}
+
+-(void)removeGameLoadingIndicator
+{
+    [userNameController removeAcitvityIndicator];
+    [self removeUserNameView];
 }
 
 

@@ -22,4 +22,6 @@
 -(void)removeLeaderBoardView;
 -(void)showUserNameView;
 -(void)removeUserNameView;
+-(void)showGameLoadingIndicator;
+-(void)removeGameLoadingIndicator;
 @end

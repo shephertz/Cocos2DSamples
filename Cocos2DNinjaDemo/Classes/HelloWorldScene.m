@@ -74,12 +74,12 @@
     }
     enemy.opacity = 255;
     isEnemyAdded = YES;
-	CCSprite *target = [CCSprite spriteWithFile:@"Target.png" rect:CGRectMake(0, 0, 27, 40)]; 
+	CCSprite *target = [CCSprite spriteWithFile:@"Bullet-blue.png"];
 	
 	// Determine where to spawn the target along the Y axis
 	//CGSize winSize = [[CCDirector sharedDirector] winSize];
 
-	target.position =enemy.position ;
+	target.position =ccp(enemy.position.x+enemy.contentSize.width/2, enemy.position.y);//enemy.position ;
 	[self addChild:target];
 	
 	
@@ -106,7 +106,7 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super initWithColor:ccc4(255,255,255,255)] ))
+	if( (self=[super initWithColor:ccc4(100,100,50,255)] ))
     {
         score=0;
         isEnemyAdded = NO;
@@ -123,16 +123,32 @@
 		// Get the dimensions of the window for calculation purposes
 		CGSize winSize = [[CCDirector sharedDirector] winSize];
 		
+        
+//        NSString *gameOverSceneBg;
+//        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//        {
+//            gameOverSceneBg = @"MenuBg.png";
+//        }
+//        else
+//        {
+//            gameOverSceneBg = @"MenuBg_iPhone.png";
+//        }
+//        
+//        CCSprite *bgSprite = [CCSprite spriteWithFile:gameOverSceneBg];
+//        [bgSprite setPosition:ccp(winSize.width/2, winSize.height/2)];
+//        bgSprite.opacity = 200;
+//        [self addChild:bgSprite];
+        
 		// Add the player to the middle of the screen along the y-axis, 
 		// and as close to the left side edge as we can get
 		// Remember that position is based on the anchor point, and by default the anchor
 		// point is the middle of the object.
-		player = [Player spriteWithFile:@"Player.png" rect:CGRectMake(0, 0, 27, 40)];
+		player = [Player spriteWithFile:@"Player.png" rect:CGRectMake(0, 0, 72, 171)];
 		player.position = ccp(player.contentSize.width/2, winSize.height/2);
-        enemy.isEnemy = NO;
+        player.isEnemy = NO;
 		[self addChild:player];
         
-        enemy = [Player spriteWithFile:@"Player.png" rect:CGRectMake(0, 0, 27, 40)];
+        enemy = [Player spriteWithFile:@"Enemy.png" rect:CGRectMake(0, 0, 100 , 100)];
 		enemy.position = ccp(winSize.width-enemy.contentSize.width/2, winSize.height/2);
         enemy.isEnemy = YES;
 		[self addChild:enemy];
@@ -152,23 +168,23 @@
         
         CCLabelTTF *scoreTitle = [CCLabelTTF labelWithString:@"Score:" fontName:@"Helvetica-Bold" fontSize:20];
         CGSize scoreTitleSize = scoreTitle.contentSize;
-        scoreTitle.position = ccp(winSize.width-scoreTitleSize.width-scoreTitleSize.width/4,winSize.height-scoreTitleSize.height/2);
-        scoreTitle.color = ccc3(60,90,133);
+        scoreTitle.position = ccp(winSize.width-scoreTitleSize.width-scoreTitleSize.width/4,winSize.height-scoreTitleSize.height);
+        scoreTitle.color = ccc3(255,255,255);
         [self addChild:scoreTitle z:100];
         
         scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",score] fontName:@"Helvetica-Bold" fontSize:20];
-        scoreLabel.position = ccp(winSize.width-3*scoreTitleSize.width/8,winSize.height-scoreTitleSize.height/2);
-        scoreLabel.color = ccc3(60,90,133);
+        scoreLabel.position = ccp(winSize.width-3*scoreTitleSize.width/8,winSize.height-scoreTitleSize.height);
+        scoreLabel.color = ccc3(255,255,255);
         [self addChild:scoreLabel z:100];
         
         CCLabelTTF *timeTitle = [CCLabelTTF labelWithString:@"Time Left:" fontName:@"Helvetica-Bold" fontSize:20];
-        timeTitle.position = ccp(7*timeTitle.contentSize.width/12,winSize.height-scoreTitleSize.height/2);
-        timeTitle.color = ccc3(60,90,133);
+        timeTitle.position = ccp(7*timeTitle.contentSize.width/12,winSize.height-scoreTitleSize.height);
+        timeTitle.color = ccc3(255,255,255);
         [self addChild:timeTitle z:100];
         
         timeLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",previousUpdatedTime] fontName:@"Helvetica-Bold" fontSize:20];
-        timeLabel.position = ccp(timeTitle.contentSize.width+5*timeLabel.contentSize.width/4,winSize.height-scoreTitleSize.height/2);
-        timeLabel.color = ccc3(60,90,133);
+        timeLabel.position = ccp(timeTitle.contentSize.width+5*timeLabel.contentSize.width/4,winSize.height-scoreTitleSize.height);
+        timeLabel.color = ccc3(255,255,255);
         [self addChild:timeLabel z:100];
         
         
@@ -201,7 +217,7 @@
             NSMutableArray *targetsToDelete = [[NSMutableArray alloc] init];
             for (CCSprite *target in _targets)
             {
-                CGRect targetRect = CGRectMake(target.position.x - (target.contentSize.width/2), 
+                CGRect targetRect = CGRectMake(target.position.x - (target.contentSize.width/2),
                                                target.position.y - (target.contentSize.height/2), 
                                                target.contentSize.width, 
                                                target.contentSize.height);
@@ -315,8 +331,8 @@
 	
 	// Set up initial location of projectile
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
-	CCSprite *projectile = [CCSprite spriteWithFile:@"Projectile.png" rect:CGRectMake(0, 0, 20, 20)];
-	projectile.position = player.position;//ccp(20, winSize.height/2);
+	CCSprite *projectile = [CCSprite spriteWithFile:@"Bullet-red.png"];
+	projectile.position = ccp(player.position.x+player.contentSize.width/2, player.position.y);
 	
 	// Determine offset of location to projectile
 	int offX = location.x - projectile.position.x;

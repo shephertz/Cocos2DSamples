@@ -67,6 +67,17 @@
 
 }
 
+-(void)showAcitvityIndicator
+{
+    indicatorView.hidden = NO;
+    [activityIndicatorView startAnimating];
+}
+
+-(void)removeAcitvityIndicator
+{
+    [activityIndicatorView stopAnimating];
+    [indicatorView removeFromSuperview];
+}
 
 
 #pragma mark ----
@@ -237,7 +248,7 @@
     {
         // Process the login request
         [[AppWarpHelper sharedAppWarpHelper] setUserName:playerNameTextField.text];
-        [[NFStoryBoardManager sharedNFStoryBoardManager] removeUserNameView];
+        [[NFStoryBoardManager sharedNFStoryBoardManager] showGameLoadingIndicator];
         //[(Cocos2DSimpleGameAppDelegate*)[[UIApplication sharedApplication] delegate] removeEnterUserNameScreen];
         
     }

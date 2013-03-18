@@ -37,6 +37,8 @@
     IBOutlet UIView         *guestView;
     IBOutlet UITextField    *playerNameTextField;
     IBOutlet UIButton       *startButton;
+    IBOutlet UIView *indicatorView;
+    IBOutlet UIActivityIndicatorView *activityIndicatorView;
 }
 
 -(IBAction)submitButtonAction:(id)sender;
@@ -45,4 +47,6 @@
 -(IBAction)signUpButtonAction:(id)sender;
 -(IBAction)facebookLogInButtonAction:(id)sender;
 -(IBAction)startGameButtonAction:(id)sender;
+-(void)showAcitvityIndicator;
+-(void)removeAcitvityIndicator;
 @end

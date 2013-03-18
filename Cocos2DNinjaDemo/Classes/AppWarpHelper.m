@@ -14,6 +14,7 @@
 #import "GameConstants.h"
 #import "cocos2d.h"
 #import "HelloWorldScene.h"
+#import "NFStoryBoardManager.h"
 
 static AppWarpHelper *appWarpHelper;
 
@@ -250,7 +251,7 @@ static AppWarpHelper *appWarpHelper;
 
 -(void)setCustomDataWithData:(NSData*)data
 {
-    if ([[WarpClient getInstance] getConnectionState]== CONNECTED)
+    if ([[WarpClient getInstance] getConnectionState]== AUTHENTICATED)
     {
         [[WarpClient getInstance] sendUpdatePeers:data];
     }
@@ -297,6 +298,34 @@ static AppWarpHelper *appWarpHelper;
 -(void)sendGameRequest
 {
 //    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:userName,USER_NAME,@"",PLAYER_POSITION,@"",PROJECTILE_DESTINATION,@"",MOVEMENT_DURATION,[NSNumber numberWithBool:YES],IS_USER_JOINED_MESSAGE,nil];
+}
+
+-(void)onConnectionFailure:(NSDictionary*)messageDict
+{
+    [[CCDirector sharedDirector] pause];
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: [messageDict objectForKey:@"title"]
+                          message:[messageDict objectForKey:@"message"] 
+                          delegate: self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == 0)
+    {
+		NSLog(@"user pressed OK");
+        [[NFStoryBoardManager sharedNFStoryBoardManager] showUserNameView];
+	}
+	else
+    {
+		NSLog(@"user pressed Cancel");
+        [[NFStoryBoardManager sharedNFStoryBoardManager] showUserNameView];
+	}
 }
 
 @end

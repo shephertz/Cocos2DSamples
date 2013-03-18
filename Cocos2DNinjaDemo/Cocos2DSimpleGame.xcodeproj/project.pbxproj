@@ -64,7 +64,6 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
-		5D20642A16ADC23300C033E1 /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D20642916ADC23300C033E1 /* AppWarp_iOS_SDK.framework */; };
 		5D20643616AFAD2400C033E1 /* ConnectionListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D20643516AFAD2400C033E1 /* ConnectionListener.m */; };
 		5D20643916B01E3F00C033E1 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D20643816B01E3F00C033E1 /* Player.m */; };
 		5D20644316B1C20E00C033E1 /* AppWarpHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D20644216B1C20E00C033E1 /* AppWarpHelper.m */; };
@@ -81,6 +80,10 @@
 		D770E21416F19FB200FDE7FC /* LeaderBoardViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D770E21316F19FB200FDE7FC /* LeaderBoardViewController_iPhone.xib */; };
 		D770E21716F1B16300FDE7FC /* NFStoryBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D770E21616F1B16300FDE7FC /* NFStoryBoardManager.m */; };
 		D7898C1C16F6ED630007D14E /* UniversalBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7898C1716F6ED630007D14E /* UniversalBackButton.png */; };
+		D79CE86616F7280100B07945 /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79CE86516F7280100B07945 /* AppWarp_iOS_SDK.framework */; };
+		D79CE86816F729E200B07945 /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = D79CE86716F729E200B07945 /* Enemy.png */; };
+		D79CE86B16F72D5100B07945 /* Bullet-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D79CE86916F72D5100B07945 /* Bullet-blue.png */; };
+		D79CE86C16F72D5100B07945 /* Bullet-red.png in Resources */ = {isa = PBXBuildFile; fileRef = D79CE86A16F72D5100B07945 /* Bullet-red.png */; };
 		D7E4E69D16F0B42C0024F8C3 /* UserNameController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4E69C16F0B42C0024F8C3 /* UserNameController_iPhone.xib */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
@@ -339,7 +342,6 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D20642916ADC23300C033E1 /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
 		5D20643416AFAD2400C033E1 /* ConnectionListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionListener.h; sourceTree = "<group>"; };
 		5D20643516AFAD2400C033E1 /* ConnectionListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionListener.m; sourceTree = "<group>"; };
 		5D20643716B01E3F00C033E1 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -365,6 +367,10 @@
 		D770E21516F1B16200FDE7FC /* NFStoryBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFStoryBoardManager.h; sourceTree = "<group>"; };
 		D770E21616F1B16300FDE7FC /* NFStoryBoardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFStoryBoardManager.m; sourceTree = "<group>"; };
 		D7898C1716F6ED630007D14E /* UniversalBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalBackButton.png; sourceTree = "<group>"; };
+		D79CE86516F7280100B07945 /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
+		D79CE86716F729E200B07945 /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enemy.png; sourceTree = "<group>"; };
+		D79CE86916F72D5100B07945 /* Bullet-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bullet-blue.png"; sourceTree = "<group>"; };
+		D79CE86A16F72D5100B07945 /* Bullet-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bullet-red.png"; sourceTree = "<group>"; };
 		D7E4E69C16F0B42C0024F8C3 /* UserNameController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserNameController_iPhone.xib; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -575,8 +581,8 @@
 				506EDB88102F4C4000A389B3 /* libz.dylib in Frameworks */,
 				506EDBA5102F4C9F00A389B3 /* AVFoundation.framework in Frameworks */,
 				506EE1A91030508200A389B3 /* libcocos2d libraries.a in Frameworks */,
-				5D20642A16ADC23300C033E1 /* AppWarp_iOS_SDK.framework in Frameworks */,
 				D76CC26E16F2E76100672507 /* Shephertz_App42_iOS_API.framework in Frameworks */,
+				D79CE86616F7280100B07945 /* AppWarp_iOS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,8 +640,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D79CE86516F7280100B07945 /* AppWarp_iOS_SDK.framework */,
 				D76CC26D16F2E76100672507 /* Shephertz_App42_iOS_API.framework */,
-				5D20642916ADC23300C033E1 /* AppWarp_iOS_SDK.framework */,
 				DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */,
 				DCCBF1B80F6022AE0040855A /* Foundation.framework */,
 				DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */,
@@ -783,6 +789,8 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D79CE86916F72D5100B07945 /* Bullet-blue.png */,
+				D79CE86A16F72D5100B07945 /* Bullet-red.png */,
 				D76CC27D16F3059B00672507 /* MenuBg_iPhone.png */,
 				D7898C1716F6ED630007D14E /* UniversalBackButton.png */,
 				D76CC27516F2FA2200672507 /* MenuBg.png */,
@@ -791,6 +799,7 @@
 				E11EC262129A2D92008B1CA2 /* background-music-aac.caf */,
 				E11EC263129A2D92008B1CA2 /* pew-pew-lei.caf */,
 				E11EC264129A2D92008B1CA2 /* Player.png */,
+				D79CE86716F729E200B07945 /* Enemy.png */,
 				E11EC265129A2D92008B1CA2 /* Projectile.png */,
 				E11EC266129A2D92008B1CA2 /* Target.png */,
 				E02BB762126CC1E0006E46A2 /* iTunesArtwork */,
@@ -1240,6 +1249,9 @@
 				D76CC27616F2FA2200672507 /* MenuBg.png in Resources */,
 				D76CC27E16F3059B00672507 /* MenuBg_iPhone.png in Resources */,
 				D7898C1C16F6ED630007D14E /* UniversalBackButton.png in Resources */,
+				D79CE86816F729E200B07945 /* Enemy.png in Resources */,
+				D79CE86B16F72D5100B07945 /* Bullet-blue.png in Resources */,
+				D79CE86C16F72D5100B07945 /* Bullet-red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

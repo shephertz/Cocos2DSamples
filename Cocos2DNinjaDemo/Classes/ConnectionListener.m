@@ -27,6 +27,8 @@
     else
     {
         NSLog(@"connection failed");
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:@"Connection Error:",@"title",@"Please check ur internet connection!",@"message", nil];
+        [[AppWarpHelper sharedAppWarpHelper] onConnectionFailure:dict];
     }
 }
 

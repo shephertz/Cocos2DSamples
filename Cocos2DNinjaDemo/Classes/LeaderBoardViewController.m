@@ -37,12 +37,16 @@
 {
     [super viewDidLoad];
     CGSize viewSize = self.view.frame.size;
+    float viewSizeHeight = viewSize.height;
+    float viewSizeWidth  = viewSize.width;
     // Do any additional setup after loading the view from its nib.
     scoreList=nil;
     
     userRecordsTableView.backgroundColor = [UIColor clearColor];
-    userRecordsTableView.frame = CGRectMake(0, 0, viewSize.height, viewSize.height);
+    userRecordsTableView.frame = CGRectMake(0, 0, viewSizeHeight, viewSizeHeight);
     
+    
+    indicatorView.frame = CGRectMake((viewSizeHeight-indicatorView.frame.size.width)/2, (viewSizeWidth-indicatorView.frame.size.height)/2, indicatorView.frame.size.width, indicatorView.frame.size.height);
     //
     // Create a header view. Wrap it in a container to allow us to position
     // it better.
