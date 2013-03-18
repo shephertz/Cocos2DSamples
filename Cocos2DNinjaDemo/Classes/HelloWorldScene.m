@@ -179,10 +179,10 @@
 
 - (void)update:(ccTime)dt
 {
-//    if (!isEnemyAdded)
-//    {
-//        return;
-//    }
+    if (!isEnemyAdded)
+    {
+        return;
+    }
     timeLeft -= dt;
     
 	NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
@@ -305,10 +305,10 @@
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    if (!isEnemyAdded)
-//    {
-//        return;
-//    }
+    if (!isEnemyAdded)
+    {
+        return;
+    }
 	// Choose one of the touches to work with
 	UITouch *touch = [touches anyObject];
 	CGPoint location = [touch locationInView:[touch view]];
