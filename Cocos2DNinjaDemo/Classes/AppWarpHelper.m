@@ -250,7 +250,11 @@ static AppWarpHelper *appWarpHelper;
 
 -(void)setCustomDataWithData:(NSData*)data
 {
-    [[WarpClient getInstance] sendUpdatePeers:data];
+    if ([[WarpClient getInstance] getConnectionState]== CONNECTED)
+    {
+        [[WarpClient getInstance] sendUpdatePeers:data];
+    }
+
 }
 
 
