@@ -179,6 +179,7 @@
 
 - (void)update:(ccTime)dt
 {
+    
     if (!isEnemyAdded)
     {
         return;
@@ -305,10 +306,7 @@
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (!isEnemyAdded)
-    {
-        return;
-    }
+    
 	// Choose one of the touches to work with
 	UITouch *touch = [touches anyObject];
 	CGPoint location = [touch locationInView:[touch view]];

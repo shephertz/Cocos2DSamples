@@ -81,7 +81,7 @@
 
 -(void)onGetAllRoomsDone:(AllRoomsEvent*)event{
     if (event.result == SUCCESS) {
-        [[WarpClient getInstance]getOnlineUsers];
+        //[[WarpClient getInstance]getOnlineUsers];
     }
     else {
     }
@@ -90,6 +90,12 @@
     if (event.result == SUCCESS)
     {
         NSLog(@"usernames = %@",event.userNames);
+//        int userCount = [event.userNames count];
+//        [[AppWarpHelper sharedAppWarpHelper] setNumberOfPlayers:userCount];
+//        if (userCount==2)
+//        {
+//            
+//        }
     }
     else 
     {

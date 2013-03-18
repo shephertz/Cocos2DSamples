@@ -21,6 +21,6 @@
 #define PLAYER_POSITION     @"playerPositon"
 #define PROJECTILE_DESTINATION    @"projectileDest"
 #define MOVEMENT_DURATION    @"realMoveDuration"
-
+#define IS_USER_JOINED_MESSAGE  @"is_user_joined_message"
 
 #define MAX_NUMBER_OF_RECORDS_DISPLAYED_IN_LB   20

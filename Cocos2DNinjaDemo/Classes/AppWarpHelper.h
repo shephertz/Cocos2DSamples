@@ -12,6 +12,7 @@
 @interface AppWarpHelper : NSObject
 {
     ServiceAPI *serviceAPIObject;
+    int numberOfPlayers;
 }
 @property(nonatomic,retain) id delegate;
 @property (nonatomic,retain) NSString *roomId;
@@ -21,6 +22,7 @@
 @property (nonatomic,retain) NSString *enemyName;
 @property (nonatomic,assign) BOOL     alreadyRegistered;
 @property (nonatomic,assign) int      score;
+@property (nonatomic,assign) int      numberOfPlayers;
 
 +(AppWarpHelper *)sharedAppWarpHelper;
 -(void)initializeAppWarp;

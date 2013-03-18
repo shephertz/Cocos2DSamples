@@ -19,7 +19,7 @@ static AppWarpHelper *appWarpHelper;
 
 @implementation AppWarpHelper
 
-@synthesize delegate,roomId,userName,enemyName,emailId,password,alreadyRegistered,score;
+@synthesize delegate,roomId,userName,enemyName,emailId,password,alreadyRegistered,score,numberOfPlayers;
 +(AppWarpHelper *)sharedAppWarpHelper
 {
 	if(appWarpHelper == nil)
@@ -41,7 +41,7 @@ static AppWarpHelper *appWarpHelper;
         password    = nil;
         alreadyRegistered = NO;
 		self.roomId = ROOM_ID;
-        
+        numberOfPlayers = 0;
         serviceAPIObject = nil;
 	}
 	return self;
@@ -282,5 +282,9 @@ static AppWarpHelper *appWarpHelper;
     [[WarpClient getInstance] getOnlineUsers];
 }
 
+-(void)sendGameRequest
+{
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:userName,USER_NAME,@"",PLAYER_POSITION,@"",PROJECTILE_DESTINATION,@"",MOVEMENT_DURATION,[NSNumber numberWithBool:YES],IS_USER_JOINED_MESSAGE,nil];
+}
 
 @end

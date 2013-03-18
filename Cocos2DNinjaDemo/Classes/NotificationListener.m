@@ -27,8 +27,9 @@
 -(void)onUserLeftRoom:(RoomData*)roomData username:(NSString*)username{
     
 }
--(void)onUserJoinedRoom:(RoomData*)roomData username:(NSString*)username{
-    
+-(void)onUserJoinedRoom:(RoomData*)roomData username:(NSString*)username
+{
+   //[[AppWarpHelper sharedAppWarpHelper] getAllUsers];
 }
 -(void)onUserLeftLobby:(LobbyData*)lobbyData username:(NSString*)username{
     

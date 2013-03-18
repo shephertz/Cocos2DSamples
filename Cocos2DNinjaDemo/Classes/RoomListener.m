@@ -44,7 +44,7 @@
     {
         RoomData *roomData = roomEvent.roomData;
         [[WarpClient getInstance]subscribeRoom:roomData.roomId];
-        [[AppWarpHelper sharedAppWarpHelper] getAllUsers];
+        //[[AppWarpHelper sharedAppWarpHelper] getAllUsers];
     }
     else {
     }
