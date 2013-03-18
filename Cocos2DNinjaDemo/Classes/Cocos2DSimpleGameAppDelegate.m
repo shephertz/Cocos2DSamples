@@ -15,6 +15,7 @@
 #import "AppWarpHelper.h"
 #import "UserNameController.h"
 #import "GameOverScene.h"
+#import "NFStoryBoardManager.h"
 @implementation Cocos2DSimpleGameAppDelegate
 
 @synthesize window;
@@ -112,7 +113,9 @@
         // use this mehod on ios6
         [window setRootViewController:viewController];
     }
-	[self showEnterUserNameScreen];
+    [[AppWarpHelper sharedAppWarpHelper] initializeAppWarp];
+	//[self showEnterUserNameScreen];
+    [[NFStoryBoardManager sharedNFStoryBoardManager] showUserNameView];
     
 	[window makeKeyAndVisible];
 	
@@ -138,7 +141,7 @@
 
 -(void)removeEnterUserNameScreen
 {
-    [[AppWarpHelper sharedAppWarpHelper] initializeAppWarp];
+    [[AppWarpHelper sharedAppWarpHelper] connectToWarp];
     if (userNameController) 
     {   [[CCDirector sharedDirector] resume];
         [userNameController.view removeFromSuperview];

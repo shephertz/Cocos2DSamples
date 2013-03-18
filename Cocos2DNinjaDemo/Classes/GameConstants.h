@@ -15,7 +15,7 @@
 #define ROOM_NAME           @"R1"
 #define ROOM_OWNER          @"Rajeev"
 #define MAX_PLAYER          2
-#define GAME_OVER_TIME      5.0f //In Seconds
+#define GAME_OVER_TIME      30.0f //In Seconds
 
 #define USER_NAME           @"userName"
 #define PLAYER_POSITION     @"playerPositon"

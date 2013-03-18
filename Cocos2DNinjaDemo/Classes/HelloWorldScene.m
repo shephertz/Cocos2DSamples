@@ -179,10 +179,10 @@
 
 - (void)update:(ccTime)dt
 {
-    if (!isEnemyAdded)
-    {
-        return;
-    }
+//    if (!isEnemyAdded)
+//    {
+//        return;
+//    }
     timeLeft -= dt;
     
 	NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
@@ -283,6 +283,7 @@
         
         if (previousUpdatedTime<=0)
         {
+            [[AppWarpHelper sharedAppWarpHelper] disconnectWarp];
             [[AppWarpHelper sharedAppWarpHelper] setScore:score];
             //[[AppWarpHelper sharedAppWarpHelper] saveScore];
             [[AppWarpHelper sharedAppWarpHelper] performSelectorInBackground:@selector(saveScore) withObject:nil];

@@ -27,10 +27,13 @@
     }
 }
 -(void)onUnSubscribeRoomDone:(RoomEvent*)roomEvent{
-    if (roomEvent.result == SUCCESS) {
-        [[WarpClient getInstance]deleteRoom:roomEvent.roomData.roomId];
+    if (roomEvent.result == SUCCESS)
+    {
+        
     }
-    else {
+    else
+    {
+        
     }
 }
 -(void)onJoinRoomDone:(RoomEvent*)roomEvent
@@ -49,7 +52,7 @@
 }
 -(void)onLeaveRoomDone:(RoomEvent*)roomEvent{
     if (roomEvent.result == SUCCESS) {
-        [[WarpClient getInstance]unsubscribeRoom:roomEvent.roomData.roomId];
+        //[[WarpClient getInstance]unsubscribeRoom:roomEvent.roomData.roomId];
     }
     else {
     }

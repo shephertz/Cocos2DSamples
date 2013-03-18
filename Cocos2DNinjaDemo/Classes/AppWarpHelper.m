@@ -103,8 +103,21 @@ static AppWarpHelper *appWarpHelper;
     [warpClient addNotificationListener:notificationListener];
     [notificationListener release];
     
-    [warpClient connect];
+    //[warpClient connect];
     
+}
+
+-(void)disconnectWarp
+{
+    [[WarpClient getInstance] unsubscribeRoom:roomId];
+    [[WarpClient getInstance] leaveRoom:roomId];
+    [[WarpClient getInstance] disconnect];
+    
+}
+
+-(void)connectToWarp
+{
+    [[WarpClient getInstance] connect];
 }
 
 #pragma mark-------------

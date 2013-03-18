@@ -9,6 +9,8 @@
 #import "UserNameController.h"
 #import "AppWarpHelper.h"
 #import "Cocos2DSimpleGameAppDelegate.h"
+#import "NFStoryBoardManager.h"
+
 @interface UserNameController ()
 
 @end
@@ -235,7 +237,8 @@
     {
         // Process the login request
         [[AppWarpHelper sharedAppWarpHelper] setUserName:playerNameTextField.text];
-        [(Cocos2DSimpleGameAppDelegate*)[[UIApplication sharedApplication] delegate] removeEnterUserNameScreen];
+        [[NFStoryBoardManager sharedNFStoryBoardManager] removeUserNameView];
+        //[(Cocos2DSimpleGameAppDelegate*)[[UIApplication sharedApplication] delegate] removeEnterUserNameScreen];
         
     }
     else

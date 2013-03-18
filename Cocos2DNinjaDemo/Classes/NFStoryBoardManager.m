@@ -11,6 +11,10 @@
 #import "RootViewController.h"
 #import "Cocos2DSimpleGameAppDelegate.h"
 #import "cocos2d.h"
+#import "UserNameController.h"
+#import "AppWarpHelper.h"
+#import "HelloWorldScene.h"
+
 static NFStoryBoardManager *nFStoryBoardManager;
 
 @implementation NFStoryBoardManager
@@ -30,6 +34,7 @@ static NFStoryBoardManager *nFStoryBoardManager;
 	if (self != nil)
     {
         leaderboardController = nil;
+        userNameController    = nil;
 	}
 	return self;
 }
@@ -60,6 +65,8 @@ static NFStoryBoardManager *nFStoryBoardManager;
     
 }
 
+
+
 -(void)removeLeaderBoardView
 {
     if (leaderboardController)
@@ -70,4 +77,41 @@ static NFStoryBoardManager *nFStoryBoardManager;
     }
     [[CCDirector sharedDirector] resume];
 }
+
+-(void)showUserNameView
+{
+    if (userNameController)
+    {
+        [userNameController.view removeFromSuperview];
+        [userNameController release];
+        userNameController = nil;
+    }
+    [[CCDirector sharedDirector] pause];
+    userNameController = [[UserNameController alloc] initWithNibName:@"UserNameController" bundle:nil];
+    [[[(Cocos2DSimpleGameAppDelegate*)[[UIApplication sharedApplication] delegate] getRootViewController] view] addSubview:userNameController.view];
+}
+
+-(void)removeUserNameView
+{
+    if (userNameController)
+    {
+        [userNameController.view removeFromSuperview];
+        [userNameController release];
+        userNameController = nil;
+    }
+    [[CCDirector sharedDirector] resume];
+    [[AppWarpHelper sharedAppWarpHelper] connectToWarp];
+    
+    if ([[CCDirector sharedDirector] runningScene])
+    {
+        [[CCDirector sharedDirector] replaceScene: [HelloWorldScene node]];
+    }
+    else
+    {
+        [[CCDirector sharedDirector] runWithScene: [HelloWorldScene node]];
+    }
+    
+}
+
+
 @end

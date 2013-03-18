@@ -116,7 +116,8 @@
 
 -(void)backToGameButtonAction
 {
-    [[CCDirector sharedDirector] replaceScene: [HelloWorldScene node]];
+    //[[CCDirector sharedDirector] replaceScene: [HelloWorldScene node]];
+    [[NFStoryBoardManager sharedNFStoryBoardManager] showUserNameView];
 }
 
 

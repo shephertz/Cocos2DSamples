@@ -31,4 +31,7 @@
 -(BOOL)signInUser;
 -(void)saveScore;
 -(NSMutableArray*)getScores;
+
+-(void)disconnectWarp;
+-(void)connectToWarp;
 @end
