@@ -62,6 +62,7 @@
 
 -(void)updateEnemyStatus:(NSDictionary*)dataDict
 {
+    
     CGPoint pos = CGPointFromString([dataDict objectForKey:PLAYER_POSITION]);
     enemy.position = ccp(enemy.position.x,pos.y);
     
@@ -71,7 +72,8 @@
     {
         return;
     }
-    
+    enemy.opacity = 255;
+    isEnemyAdded = YES;
 	CCSprite *target = [CCSprite spriteWithFile:@"Target.png" rect:CGRectMake(0, 0, 27, 40)]; 
 	
 	// Determine where to spawn the target along the Y axis
@@ -107,6 +109,7 @@
 	if( (self=[super initWithColor:ccc4(255,255,255,255)] ))
     {
         score=0;
+        isEnemyAdded = NO;
         [[AppWarpHelper sharedAppWarpHelper] setScore:score];
         timeLeft = GAME_OVER_TIME;
         previousUpdatedTime = (int)GAME_OVER_TIME;
@@ -133,6 +136,11 @@
 		enemy.position = ccp(winSize.width-enemy.contentSize.width/2, winSize.height/2);
         enemy.isEnemy = YES;
 		[self addChild:enemy];
+        
+        if (!isEnemyAdded)
+        {
+            enemy.opacity = 100.0f;
+        }
 		
 		// Call game logic about every second
 		//[self schedule:@selector(gameLogic:) interval:1.0];
@@ -171,6 +179,10 @@
 
 - (void)update:(ccTime)dt
 {
+    if (!isEnemyAdded)
+    {
+        return;
+    }
     timeLeft -= dt;
     
 	NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
@@ -272,7 +284,8 @@
         if (previousUpdatedTime<=0)
         {
             [[AppWarpHelper sharedAppWarpHelper] setScore:score];
-            [[AppWarpHelper sharedAppWarpHelper] saveScore];
+            //[[AppWarpHelper sharedAppWarpHelper] saveScore];
+            [[AppWarpHelper sharedAppWarpHelper] performSelectorInBackground:@selector(saveScore) withObject:nil];
             // Run the GameOverScene
             [[CCDirector sharedDirector] replaceScene:[GameOverScene node]];
         }
@@ -291,7 +304,10 @@
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-
+//    if (!isEnemyAdded)
+//    {
+//        return;
+//    }
 	// Choose one of the touches to work with
 	UITouch *touch = [touches anyObject];
 	CGPoint location = [touch locationInView:[touch view]];

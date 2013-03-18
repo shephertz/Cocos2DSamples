@@ -80,6 +80,7 @@
 		D770E21216F19F8000FDE7FC /* LeaderBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D770E21016F19F8000FDE7FC /* LeaderBoardViewController.xib */; };
 		D770E21416F19FB200FDE7FC /* LeaderBoardViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D770E21316F19FB200FDE7FC /* LeaderBoardViewController_iPhone.xib */; };
 		D770E21716F1B16300FDE7FC /* NFStoryBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D770E21616F1B16300FDE7FC /* NFStoryBoardManager.m */; };
+		D7898C1C16F6ED630007D14E /* UniversalBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7898C1716F6ED630007D14E /* UniversalBackButton.png */; };
 		D7E4E69D16F0B42C0024F8C3 /* UserNameController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E4E69C16F0B42C0024F8C3 /* UserNameController_iPhone.xib */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
@@ -363,6 +364,7 @@
 		D770E21316F19FB200FDE7FC /* LeaderBoardViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderBoardViewController_iPhone.xib; sourceTree = "<group>"; };
 		D770E21516F1B16200FDE7FC /* NFStoryBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFStoryBoardManager.h; sourceTree = "<group>"; };
 		D770E21616F1B16300FDE7FC /* NFStoryBoardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFStoryBoardManager.m; sourceTree = "<group>"; };
+		D7898C1716F6ED630007D14E /* UniversalBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalBackButton.png; sourceTree = "<group>"; };
 		D7E4E69C16F0B42C0024F8C3 /* UserNameController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserNameController_iPhone.xib; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -782,6 +784,7 @@
 			isa = PBXGroup;
 			children = (
 				D76CC27D16F3059B00672507 /* MenuBg_iPhone.png */,
+				D7898C1716F6ED630007D14E /* UniversalBackButton.png */,
 				D76CC27516F2FA2200672507 /* MenuBg.png */,
 				D770E20B16F19CD200FDE7FC /* back_button.png */,
 				E11EC261129A2D92008B1CA2 /* logo6.png */,
@@ -1236,6 +1239,7 @@
 				D770E21416F19FB200FDE7FC /* LeaderBoardViewController_iPhone.xib in Resources */,
 				D76CC27616F2FA2200672507 /* MenuBg.png in Resources */,
 				D76CC27E16F3059B00672507 /* MenuBg_iPhone.png in Resources */,
+				D7898C1C16F6ED630007D14E /* UniversalBackButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

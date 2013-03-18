@@ -13,5 +13,13 @@
     IBOutlet UIButton *backButton;
     IBOutlet UITableView *userRecordsTableView;
     NSMutableArray *scoreList;
+    
+    IBOutlet UIView *indicatorView;
+    IBOutlet UIActivityIndicatorView *activityIndicatorView;
 }
+
+-(void)showAcitvityIndicator;
+-(void)removeAcitvityIndicator;
+-(void)getScore;
+
 @end

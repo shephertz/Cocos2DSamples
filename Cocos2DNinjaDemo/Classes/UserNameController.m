@@ -284,17 +284,17 @@
 
 - (NSUInteger) supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationLandscapeLeft;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL) shouldAutorotate
 {
-    return YES;
+    return NO;
 }
 
 //- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 //{
-//    return YES;
+//    return (interfaceOrientation==UIInterfaceOrientationMaskLandscape);
 //}
 
 @end

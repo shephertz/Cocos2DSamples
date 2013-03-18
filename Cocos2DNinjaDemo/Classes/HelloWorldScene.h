@@ -15,6 +15,7 @@
     CCLabelTTF *timeLabel;
     float timeLeft;
     int previousUpdatedTime;
+    BOOL isEnemyAdded;
 }
 
 -(void)updatePlayerDataToServerWithDataDict:(NSDictionary*)dataDict;
