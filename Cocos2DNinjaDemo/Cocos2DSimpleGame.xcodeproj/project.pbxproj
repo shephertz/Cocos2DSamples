@@ -286,7 +286,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D6058910D05DD3D006BFB54 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Ninja Fight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Fight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3B9A2B0EF2145700286867 /* Cocos2DSimpleGameAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cocos2DSimpleGameAppDelegate.m; path = Classes/Cocos2DSimpleGameAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		1F3B9A2C0EF2145700286867 /* Cocos2DSimpleGameAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cocos2DSimpleGameAppDelegate.h; path = Classes/Cocos2DSimpleGameAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* Cocos2DSimpleGame_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2DSimpleGame_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -606,7 +606,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Cocos2DSimpleGame.app */,
+				1D6058910D05DD3D006BFB54 /* Ninja Fight.app */,
 				506EE05E10304ED200A389B3 /* libcocos2d libraries.a */,
 			);
 			name = Products;
@@ -1176,7 +1176,7 @@
 			);
 			name = Cocos2DSimpleGame;
 			productName = Cocos2DSimpleGame;
-			productReference = 1D6058910D05DD3D006BFB54 /* Cocos2DSimpleGame.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Ninja Fight.app */;
 			productType = "com.apple.product-type.application";
 		};
 		506EE05D10304ED200A389B3 /* cocos2d libraries */ = {
@@ -1418,7 +1418,7 @@
 					"-ObjC",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = Cocos2DSimpleGame;
+				PRODUCT_NAME = "Ninja Fight";
 				PROVISIONING_PROFILE = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
 				WARNING_CFLAGS = "-Wall";
@@ -1448,7 +1448,7 @@
 					"-ObjC",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = Cocos2DSimpleGame;
+				PRODUCT_NAME = "Ninja Fight";
 				PROVISIONING_PROFILE = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
 				WARNING_CFLAGS = "-Wall";
