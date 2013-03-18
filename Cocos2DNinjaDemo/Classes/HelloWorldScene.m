@@ -284,10 +284,11 @@
         
         if (previousUpdatedTime<=0)
         {
-            [[AppWarpHelper sharedAppWarpHelper] disconnectWarp];
+            
             [[AppWarpHelper sharedAppWarpHelper] setScore:score];
             //[[AppWarpHelper sharedAppWarpHelper] saveScore];
             [[AppWarpHelper sharedAppWarpHelper] performSelectorInBackground:@selector(saveScore) withObject:nil];
+            [[AppWarpHelper sharedAppWarpHelper] disconnectWarp];
             // Run the GameOverScene
             [[CCDirector sharedDirector] replaceScene:[GameOverScene node]];
         }
