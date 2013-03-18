@@ -109,6 +109,14 @@ static AppWarpHelper *appWarpHelper;
 
 -(void)disconnectWarp
 {
+    if (userName)
+    {
+        self.userName=nil;
+    }
+    if (enemyName)
+    {
+        self.enemyName=nil;
+    }
     [[WarpClient getInstance] unsubscribeRoom:roomId];
     [[WarpClient getInstance] leaveRoom:roomId];
     [[WarpClient getInstance] disconnect];
@@ -263,7 +271,7 @@ static AppWarpHelper *appWarpHelper;
 		NSLog(@"DataConversion Failed. ErrorDescription: %@",[error description]);
 		return;
 	}
-    
+    //NSLog(@"enemyName=%@,  userName=%@",enemyName,userName);
     if (!enemyName && ![userName isEqualToString:[contentObject objectForKey:USER_NAME]])
     {
         self.enemyName = [contentObject objectForKey:USER_NAME];
