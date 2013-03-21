@@ -64,7 +64,7 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
-		64FC249716A8365B00BF1879 /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FC249616A8365B00BF1879 /* AppWarp_iOS_SDK.framework */; };
+		648DD37116FACEDE009C84E2 /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648DD37016FACEDE009C84E2 /* AppWarp_iOS_SDK.framework */; };
 		64FC249A16A83C6500BF1879 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FC249916A83C6500BF1879 /* MainWindow.xib */; };
 		64FC249E16A8526E00BF1879 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FC249C16A8526E00BF1879 /* MainMenuViewController.m */; };
 		64FC249F16A8526E00BF1879 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FC249D16A8526E00BF1879 /* MainMenuViewController.xib */; };
@@ -325,7 +325,7 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64FC249616A8365B00BF1879 /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
+		648DD37016FACEDE009C84E2 /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
 		64FC249916A83C6500BF1879 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		64FC249B16A8526E00BF1879 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		64FC249C16A8526E00BF1879 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
@@ -540,7 +540,7 @@
 				506EDB88102F4C4000A389B3 /* libz.dylib in Frameworks */,
 				506EDBA5102F4C9F00A389B3 /* AVFoundation.framework in Frameworks */,
 				506EE1A91030508200A389B3 /* libcocos2d libraries.a in Frameworks */,
-				64FC249716A8365B00BF1879 /* AppWarp_iOS_SDK.framework in Frameworks */,
+				648DD37116FACEDE009C84E2 /* AppWarp_iOS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +597,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				64FC249616A8365B00BF1879 /* AppWarp_iOS_SDK.framework */,
+				648DD37016FACEDE009C84E2 /* AppWarp_iOS_SDK.framework */,
 				DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */,
 				DCCBF1B80F6022AE0040855A /* Foundation.framework */,
 				DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */,
@@ -1391,7 +1391,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
@@ -1406,6 +1407,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos4.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1416,6 +1418,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = NO;
@@ -1426,6 +1429,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

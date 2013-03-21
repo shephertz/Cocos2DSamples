@@ -96,6 +96,7 @@
         [[WarpClient getInstance]joinZone:[[GlobalContext sharedInstance] username]];
     }
     else {
+         NSLog(@"Connection Failed"); 
         _error.text = @"Connection Failed!";
     }
 }
