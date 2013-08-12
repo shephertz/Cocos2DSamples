@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>{0, 0}</key>
+	<integer>0</integer>
+	<key>{0, 10}</key>
+	<integer>0</integer>
+	<key>{0, 11}</key>
+	<integer>0</integer>
+	<key>{0, 12}</key>
+	<integer>0</integer>
+	<key>{0, 13}</key>
+	<integer>0</integer>
+	<key>{0, 14}</key>
+	<integer>0</integer>
+	<key>{0, 15}</key>
+	<integer>0</integer>
+	<key>{0, 16}</key>
+	<integer>0</integer>
+	<key>{0, 17}</key>
+	<integer>0</integer>
+	<key>{0, 18}</key>
+	<integer>0</integer>
+	<key>{0, 19}</key>
+	<integer>0</integer>
+	<key>{0, 1}</key>
+	<integer>0</integer>
+	<key>{0, 20}</key>
+	<integer>0</integer>
+	<key>{0, 2}</key>
+	<integer>0</integer>
+	<key>{0, 3}</key>
+	<integer>0</integer>
+	<key>{0, 4}</key>
+	<integer>0</integer>
+	<key>{0, 5}</key>
+	<integer>0</integer>
+	<key>{0, 6}</key>
+	<integer>0</integer>
+	<key>{0, 7}</key>
+	<integer>0</integer>
+	<key>{0, 8}</key>
+	<integer>0</integer>
+	<key>{0, 9}</key>
+	<integer>0</integer>
+	<key>{1, 0}</key>
+	<integer>0</integer>
+	<key>{1, 10}</key>
+	<integer>0</integer>
+	<key>{1, 11}</key>
+	<integer>0</integer>
+	<key>{1, 12}</key>
+	<integer>0</integer>
+	<key>{1, 13}</key>
+	<integer>0</integer>
+	<key>{1, 14}</key>
+	<integer>0</integer>
+	<key>{1, 15}</key>
+	<integer>0</integer>
+	<key>{1, 16}</key>
+	<integer>0</integer>
+	<key>{1, 17}</key>
+	<integer>0</integer>
+	<key>{1, 18}</key>
+	<integer>0</integer>
+	<key>{1, 19}</key>
+	<integer>0</integer>
+	<key>{1, 1}</key>
+	<integer>0</integer>
+	<key>{1, 20}</key>
+	<integer>0</integer>
+	<key>{1, 2}</key>
+	<integer>0</integer>
+	<key>{1, 3}</key>
+	<integer>0</integer>
+	<key>{1, 4}</key>
+	<integer>0</integer>
+	<key>{1, 5}</key>
+	<integer>0</integer>
+	<key>{1, 6}</key>
+	<integer>0</integer>
+	<key>{1, 7}</key>
+	<integer>0</integer>
+	<key>{1, 8}</key>
+	<integer>0</integer>
+	<key>{1, 9}</key>
+	<integer>0</integer>
+	<key>{10, 0}</key>
+	<integer>0</integer>
+	<key>{10, 10}</key>
+	<integer>0</integer>
+	<key>{10, 11}</key>
+	<integer>0</integer>
+	<key>{10, 12}</key>
+	<integer>0</integer>
+	<key>{10, 13}</key>
+	<integer>0</integer>
+	<key>{10, 14}</key>
+	<integer>0</integer>
+	<key>{10, 15}</key>
+	<integer>0</integer>
+	<key>{10, 16}</key>
+	<integer>0</integer>
+	<key>{10, 17}</key>
+	<integer>0</integer>
+	<key>{10, 18}</key>
+	<integer>0</integer>
+	<key>{10, 19}</key>
+	<integer>0</integer>
+	<key>{10, 1}</key>
+	<integer>0</integer>
+	<key>{10, 20}</key>
+	<integer>0</integer>
+	<key>{10, 2}</key>
+	<integer>0</integer>
+	<key>{10, 3}</key>
+	<integer>0</integer>
+	<key>{10, 4}</key>
+	<integer>0</integer>
+	<key>{10, 5}</key>
+	<integer>0</integer>
+	<key>{10, 6}</key>
+	<integer>0</integer>
+	<key>{10, 7}</key>
+	<integer>0</integer>
+	<key>{10, 8}</key>
+	<integer>0</integer>
+	<key>{10, 9}</key>
+	<integer>0</integer>
+	<key>{11, 0}</key>
+	<integer>0</integer>
+	<key>{11, 10}</key>
+	<integer>0</integer>
+	<key>{11, 11}</key>
+	<integer>0</integer>
+	<key>{11, 12}</key>
+	<integer>0</integer>
+	<key>{11, 13}</key>
+	<integer>0</integer>
+	<key>{11, 14}</key>
+	<integer>0</integer>
+	<key>{11, 15}</key>
+	<integer>0</integer>
+	<key>{11, 16}</key>
+	<integer>0</integer>
+	<key>{11, 17}</key>
+	<integer>0</integer>
+	<key>{11, 18}</key>
+	<integer>0</integer>
+	<key>{11, 19}</key>
+	<integer>0</integer>
+	<key>{11, 1}</key>
+	<integer>0</integer>
+	<key>{11, 20}</key>
+	<integer>0</integer>
+	<key>{11, 2}</key>
+	<integer>0</integer>
+	<key>{11, 3}</key>
+	<integer>0</integer>
+	<key>{11, 4}</key>
+	<integer>0</integer>
+	<key>{11, 5}</key>
+	<integer>0</integer>
+	<key>{11, 6}</key>
+	<integer>0</integer>
+	<key>{11, 7}</key>
+	<integer>0</integer>
+	<key>{11, 8}</key>
+	<integer>0</integer>
+	<key>{11, 9}</key>
+	<integer>0</integer>
+	<key>{12, 0}</key>
+	<integer>0</integer>
+	<key>{12, 10}</key>
+	<integer>0</integer>
+	<key>{12, 11}</key>
+	<integer>0</integer>
+	<key>{12, 12}</key>
+	<integer>0</integer>
+	<key>{12, 13}</key>
+	<integer>0</integer>
+	<key>{12, 14}</key>
+	<integer>0</integer>
+	<key>{12, 15}</key>
+	<integer>0</integer>
+	<key>{12, 16}</key>
+	<integer>0</integer>
+	<key>{12, 17}</key>
+	<integer>0</integer>
+	<key>{12, 18}</key>
+	<integer>0</integer>
+	<key>{12, 19}</key>
+	<integer>0</integer>
+	<key>{12, 1}</key>
+	<integer>0</integer>
+	<key>{12, 20}</key>
+	<integer>0</integer>
+	<key>{12, 2}</key>
+	<integer>0</integer>
+	<key>{12, 3}</key>
+	<integer>0</integer>
+	<key>{12, 4}</key>
+	<integer>0</integer>
+	<key>{12, 5}</key>
+	<integer>0</integer>
+	<key>{12, 6}</key>
+	<integer>0</integer>
+	<key>{12, 7}</key>
+	<integer>0</integer>
+	<key>{12, 8}</key>
+	<integer>0</integer>
+	<key>{12, 9}</key>
+	<integer>0</integer>
+	<key>{13, 0}</key>
+	<integer>0</integer>
+	<key>{13, 10}</key>
+	<integer>0</integer>
+	<key>{13, 11}</key>
+	<integer>0</integer>
+	<key>{13, 12}</key>
+	<integer>0</integer>
+	<key>{13, 13}</key>
+	<integer>0</integer>
+	<key>{13, 14}</key>
+	<integer>0</integer>
+	<key>{13, 15}</key>
+	<integer>0</integer>
+	<key>{13, 16}</key>
+	<integer>0</integer>
+	<key>{13, 17}</key>
+	<integer>0</integer>
+	<key>{13, 18}</key>
+	<integer>0</integer>
+	<key>{13, 19}</key>
+	<integer>0</integer>
+	<key>{13, 1}</key>
+	<integer>0</integer>
+	<key>{13, 20}</key>
+	<integer>0</integer>
+	<key>{13, 2}</key>
+	<integer>0</integer>
+	<key>{13, 3}</key>
+	<integer>0</integer>
+	<key>{13, 4}</key>
+	<integer>0</integer>
+	<key>{13, 5}</key>
+	<integer>0</integer>
+	<key>{13, 6}</key>
+	<integer>0</integer>
+	<key>{13, 7}</key>
+	<integer>0</integer>
+	<key>{13, 8}</key>
+	<integer>0</integer>
+	<key>{13, 9}</key>
+	<integer>0</integer>
+	<key>{14, 0}</key>
+	<integer>0</integer>
+	<key>{14, 10}</key>
+	<integer>0</integer>
+	<key>{14, 11}</key>
+	<integer>0</integer>
+	<key>{14, 12}</key>
+	<integer>0</integer>
+	<key>{14, 13}</key>
+	<integer>0</integer>
+	<key>{14, 14}</key>
+	<integer>0</integer>
+	<key>{14, 15}</key>
+	<integer>0</integer>
+	<key>{14, 16}</key>
+	<integer>0</integer>
+	<key>{14, 17}</key>
+	<integer>0</integer>
+	<key>{14, 18}</key>
+	<integer>0</integer>
+	<key>{14, 19}</key>
+	<integer>0</integer>
+	<key>{14, 1}</key>
+	<integer>0</integer>
+	<key>{14, 20}</key>
+	<integer>0</integer>
+	<key>{14, 2}</key>
+	<integer>0</integer>
+	<key>{14, 3}</key>
+	<integer>0</integer>
+	<key>{14, 4}</key>
+	<integer>0</integer>
+	<key>{14, 5}</key>
+	<integer>0</integer>
+	<key>{14, 6}</key>
+	<integer>0</integer>
+	<key>{14, 7}</key>
+	<integer>0</integer>
+	<key>{14, 8}</key>
+	<integer>0</integer>
+	<key>{14, 9}</key>
+	<integer>0</integer>
+	<key>{15, 0}</key>
+	<integer>0</integer>
+	<key>{15, 10}</key>
+	<integer>0</integer>
+	<key>{15, 11}</key>
+	<integer>0</integer>
+	<key>{15, 12}</key>
+	<integer>0</integer>
+	<key>{15, 13}</key>
+	<integer>0</integer>
+	<key>{15, 14}</key>
+	<integer>0</integer>
+	<key>{15, 15}</key>
+	<integer>0</integer>
+	<key>{15, 16}</key>
+	<integer>0</integer>
+	<key>{15, 17}</key>
+	<integer>0</integer>
+	<key>{15, 18}</key>
+	<integer>0</integer>
+	<key>{15, 19}</key>
+	<integer>0</integer>
+	<key>{15, 1}</key>
+	<integer>0</integer>
+	<key>{15, 20}</key>
+	<integer>0</integer>
+	<key>{15, 2}</key>
+	<integer>0</integer>
+	<key>{15, 3}</key>
+	<integer>0</integer>
+	<key>{15, 4}</key>
+	<integer>0</integer>
+	<key>{15, 5}</key>
+	<integer>0</integer>
+	<key>{15, 6}</key>
+	<integer>0</integer>
+	<key>{15, 7}</key>
+	<integer>0</integer>
+	<key>{15, 8}</key>
+	<integer>0</integer>
+	<key>{15, 9}</key>
+	<integer>0</integer>
+	<key>{16, 0}</key>
+	<integer>0</integer>
+	<key>{16, 10}</key>
+	<integer>0</integer>
+	<key>{16, 11}</key>
+	<integer>0</integer>
+	<key>{16, 12}</key>
+	<integer>0</integer>
+	<key>{16, 13}</key>
+	<integer>0</integer>
+	<key>{16, 14}</key>
+	<integer>0</integer>
+	<key>{16, 15}</key>
+	<integer>0</integer>
+	<key>{16, 16}</key>
+	<integer>0</integer>
+	<key>{16, 17}</key>
+	<integer>0</integer>
+	<key>{16, 18}</key>
+	<integer>0</integer>
+	<key>{16, 19}</key>
+	<integer>0</integer>
+	<key>{16, 1}</key>
+	<integer>0</integer>
+	<key>{16, 20}</key>
+	<integer>0</integer>
+	<key>{16, 2}</key>
+	<integer>0</integer>
+	<key>{16, 3}</key>
+	<integer>0</integer>
+	<key>{16, 4}</key>
+	<integer>0</integer>
+	<key>{16, 5}</key>
+	<integer>0</integer>
+	<key>{16, 6}</key>
+	<integer>0</integer>
+	<key>{16, 7}</key>
+	<integer>0</integer>
+	<key>{16, 8}</key>
+	<integer>0</integer>
+	<key>{16, 9}</key>
+	<integer>0</integer>
+	<key>{17, 0}</key>
+	<integer>0</integer>
+	<key>{17, 10}</key>
+	<integer>0</integer>
+	<key>{17, 11}</key>
+	<integer>0</integer>
+	<key>{17, 12}</key>
+	<integer>0</integer>
+	<key>{17, 13}</key>
+	<integer>0</integer>
+	<key>{17, 14}</key>
+	<integer>0</integer>
+	<key>{17, 15}</key>
+	<integer>0</integer>
+	<key>{17, 16}</key>
+	<integer>0</integer>
+	<key>{17, 17}</key>
+	<integer>0</integer>
+	<key>{17, 18}</key>
+	<integer>0</integer>
+	<key>{17, 19}</key>
+	<integer>0</integer>
+	<key>{17, 1}</key>
+	<integer>0</integer>
+	<key>{17, 20}</key>
+	<integer>0</integer>
+	<key>{17, 2}</key>
+	<integer>0</integer>
+	<key>{17, 3}</key>
+	<integer>0</integer>
+	<key>{17, 4}</key>
+	<integer>0</integer>
+	<key>{17, 5}</key>
+	<integer>0</integer>
+	<key>{17, 6}</key>
+	<integer>0</integer>
+	<key>{17, 7}</key>
+	<integer>0</integer>
+	<key>{17, 8}</key>
+	<integer>0</integer>
+	<key>{17, 9}</key>
+	<integer>0</integer>
+	<key>{18, 0}</key>
+	<integer>0</integer>
+	<key>{18, 10}</key>
+	<integer>0</integer>
+	<key>{18, 11}</key>
+	<integer>0</integer>
+	<key>{18, 12}</key>
+	<integer>0</integer>
+	<key>{18, 13}</key>
+	<integer>0</integer>
+	<key>{18, 14}</key>
+	<integer>0</integer>
+	<key>{18, 15}</key>
+	<integer>0</integer>
+	<key>{18, 16}</key>
+	<integer>0</integer>
+	<key>{18, 17}</key>
+	<integer>0</integer>
+	<key>{18, 18}</key>
+	<integer>0</integer>
+	<key>{18, 19}</key>
+	<integer>0</integer>
+	<key>{18, 1}</key>
+	<integer>0</integer>
+	<key>{18, 20}</key>
+	<integer>0</integer>
+	<key>{18, 2}</key>
+	<integer>0</integer>
+	<key>{18, 3}</key>
+	<integer>0</integer>
+	<key>{18, 4}</key>
+	<integer>0</integer>
+	<key>{18, 5}</key>
+	<integer>0</integer>
+	<key>{18, 6}</key>
+	<integer>0</integer>
+	<key>{18, 7}</key>
+	<integer>0</integer>
+	<key>{18, 8}</key>
+	<integer>0</integer>
+	<key>{18, 9}</key>
+	<integer>0</integer>
+	<key>{19, 0}</key>
+	<integer>0</integer>
+	<key>{19, 10}</key>
+	<integer>0</integer>
+	<key>{19, 11}</key>
+	<integer>0</integer>
+	<key>{19, 12}</key>
+	<integer>0</integer>
+	<key>{19, 13}</key>
+	<integer>0</integer>
+	<key>{19, 14}</key>
+	<integer>0</integer>
+	<key>{19, 15}</key>
+	<integer>0</integer>
+	<key>{19, 16}</key>
+	<integer>0</integer>
+	<key>{19, 17}</key>
+	<integer>0</integer>
+	<key>{19, 18}</key>
+	<integer>0</integer>
+	<key>{19, 19}</key>
+	<integer>0</integer>
+	<key>{19, 1}</key>
+	<integer>0</integer>
+	<key>{19, 20}</key>
+	<integer>0</integer>
+	<key>{19, 2}</key>
+	<integer>0</integer>
+	<key>{19, 3}</key>
+	<integer>0</integer>
+	<key>{19, 4}</key>
+	<integer>0</integer>
+	<key>{19, 5}</key>
+	<integer>0</integer>
+	<key>{19, 6}</key>
+	<integer>0</integer>
+	<key>{19, 7}</key>
+	<integer>0</integer>
+	<key>{19, 8}</key>
+	<integer>0</integer>
+	<key>{19, 9}</key>
+	<integer>0</integer>
+	<key>{2, 0}</key>
+	<integer>0</integer>
+	<key>{2, 10}</key>
+	<integer>0</integer>
+	<key>{2, 11}</key>
+	<integer>0</integer>
+	<key>{2, 12}</key>
+	<integer>0</integer>
+	<key>{2, 13}</key>
+	<integer>0</integer>
+	<key>{2, 14}</key>
+	<integer>0</integer>
+	<key>{2, 15}</key>
+	<integer>0</integer>
+	<key>{2, 16}</key>
+	<integer>0</integer>
+	<key>{2, 17}</key>
+	<integer>0</integer>
+	<key>{2, 18}</key>
+	<integer>0</integer>
+	<key>{2, 19}</key>
+	<integer>0</integer>
+	<key>{2, 1}</key>
+	<integer>0</integer>
+	<key>{2, 20}</key>
+	<integer>0</integer>
+	<key>{2, 2}</key>
+	<integer>0</integer>
+	<key>{2, 3}</key>
+	<integer>0</integer>
+	<key>{2, 4}</key>
+	<integer>0</integer>
+	<key>{2, 5}</key>
+	<integer>0</integer>
+	<key>{2, 6}</key>
+	<integer>0</integer>
+	<key>{2, 7}</key>
+	<integer>0</integer>
+	<key>{2, 8}</key>
+	<integer>0</integer>
+	<key>{2, 9}</key>
+	<integer>0</integer>
+	<key>{20, 0}</key>
+	<integer>0</integer>
+	<key>{20, 10}</key>
+	<integer>0</integer>
+	<key>{20, 11}</key>
+	<integer>0</integer>
+	<key>{20, 12}</key>
+	<integer>0</integer>
+	<key>{20, 13}</key>
+	<integer>0</integer>
+	<key>{20, 14}</key>
+	<integer>0</integer>
+	<key>{20, 15}</key>
+	<integer>0</integer>
+	<key>{20, 16}</key>
+	<integer>0</integer>
+	<key>{20, 17}</key>
+	<integer>0</integer>
+	<key>{20, 18}</key>
+	<integer>0</integer>
+	<key>{20, 19}</key>
+	<integer>0</integer>
+	<key>{20, 1}</key>
+	<integer>0</integer>
+	<key>{20, 20}</key>
+	<integer>0</integer>
+	<key>{20, 2}</key>
+	<integer>0</integer>
+	<key>{20, 3}</key>
+	<integer>0</integer>
+	<key>{20, 4}</key>
+	<integer>0</integer>
+	<key>{20, 5}</key>
+	<integer>0</integer>
+	<key>{20, 6}</key>
+	<integer>0</integer>
+	<key>{20, 7}</key>
+	<integer>0</integer>
+	<key>{20, 8}</key>
+	<integer>0</integer>
+	<key>{20, 9}</key>
+	<integer>0</integer>
+	<key>{3, 0}</key>
+	<integer>0</integer>
+	<key>{3, 10}</key>
+	<integer>0</integer>
+	<key>{3, 11}</key>
+	<integer>0</integer>
+	<key>{3, 12}</key>
+	<integer>0</integer>
+	<key>{3, 13}</key>
+	<integer>0</integer>
+	<key>{3, 14}</key>
+	<integer>0</integer>
+	<key>{3, 15}</key>
+	<integer>0</integer>
+	<key>{3, 16}</key>
+	<integer>0</integer>
+	<key>{3, 17}</key>
+	<integer>0</integer>
+	<key>{3, 18}</key>
+	<integer>0</integer>
+	<key>{3, 19}</key>
+	<integer>0</integer>
+	<key>{3, 1}</key>
+	<integer>0</integer>
+	<key>{3, 20}</key>
+	<integer>0</integer>
+	<key>{3, 2}</key>
+	<integer>0</integer>
+	<key>{3, 3}</key>
+	<integer>0</integer>
+	<key>{3, 4}</key>
+	<integer>0</integer>
+	<key>{3, 5}</key>
+	<integer>0</integer>
+	<key>{3, 6}</key>
+	<integer>0</integer>
+	<key>{3, 7}</key>
+	<integer>0</integer>
+	<key>{3, 8}</key>
+	<integer>0</integer>
+	<key>{3, 9}</key>
+	<integer>0</integer>
+	<key>{4, 0}</key>
+	<integer>0</integer>
+	<key>{4, 10}</key>
+	<integer>0</integer>
+	<key>{4, 11}</key>
+	<integer>0</integer>
+	<key>{4, 12}</key>
+	<integer>0</integer>
+	<key>{4, 13}</key>
+	<integer>0</integer>
+	<key>{4, 14}</key>
+	<integer>0</integer>
+	<key>{4, 15}</key>
+	<integer>0</integer>
+	<key>{4, 16}</key>
+	<integer>0</integer>
+	<key>{4, 17}</key>
+	<integer>0</integer>
+	<key>{4, 18}</key>
+	<integer>0</integer>
+	<key>{4, 19}</key>
+	<integer>0</integer>
+	<key>{4, 1}</key>
+	<integer>0</integer>
+	<key>{4, 20}</key>
+	<integer>0</integer>
+	<key>{4, 2}</key>
+	<integer>0</integer>
+	<key>{4, 3}</key>
+	<integer>0</integer>
+	<key>{4, 4}</key>
+	<integer>0</integer>
+	<key>{4, 5}</key>
+	<integer>0</integer>
+	<key>{4, 6}</key>
+	<integer>0</integer>
+	<key>{4, 7}</key>
+	<integer>0</integer>
+	<key>{4, 8}</key>
+	<integer>0</integer>
+	<key>{4, 9}</key>
+	<integer>0</integer>
+	<key>{5, 0}</key>
+	<integer>0</integer>
+	<key>{5, 10}</key>
+	<integer>0</integer>
+	<key>{5, 11}</key>
+	<integer>0</integer>
+	<key>{5, 12}</key>
+	<integer>0</integer>
+	<key>{5, 13}</key>
+	<integer>0</integer>
+	<key>{5, 14}</key>
+	<integer>0</integer>
+	<key>{5, 15}</key>
+	<integer>0</integer>
+	<key>{5, 16}</key>
+	<integer>0</integer>
+	<key>{5, 17}</key>
+	<integer>0</integer>
+	<key>{5, 18}</key>
+	<integer>0</integer>
+	<key>{5, 19}</key>
+	<integer>0</integer>
+	<key>{5, 1}</key>
+	<integer>0</integer>
+	<key>{5, 20}</key>
+	<integer>0</integer>
+	<key>{5, 2}</key>
+	<integer>0</integer>
+	<key>{5, 3}</key>
+	<integer>0</integer>
+	<key>{5, 4}</key>
+	<integer>0</integer>
+	<key>{5, 5}</key>
+	<integer>0</integer>
+	<key>{5, 6}</key>
+	<integer>0</integer>
+	<key>{5, 7}</key>
+	<integer>0</integer>
+	<key>{5, 8}</key>
+	<integer>0</integer>
+	<key>{5, 9}</key>
+	<integer>0</integer>
+	<key>{6, 0}</key>
+	<integer>0</integer>
+	<key>{6, 10}</key>
+	<integer>0</integer>
+	<key>{6, 11}</key>
+	<integer>0</integer>
+	<key>{6, 12}</key>
+	<integer>0</integer>
+	<key>{6, 13}</key>
+	<integer>0</integer>
+	<key>{6, 14}</key>
+	<integer>0</integer>
+	<key>{6, 15}</key>
+	<integer>0</integer>
+	<key>{6, 16}</key>
+	<integer>0</integer>
+	<key>{6, 17}</key>
+	<integer>0</integer>
+	<key>{6, 18}</key>
+	<integer>0</integer>
+	<key>{6, 19}</key>
+	<integer>0</integer>
+	<key>{6, 1}</key>
+	<integer>0</integer>
+	<key>{6, 20}</key>
+	<integer>0</integer>
+	<key>{6, 2}</key>
+	<integer>0</integer>
+	<key>{6, 3}</key>
+	<integer>0</integer>
+	<key>{6, 4}</key>
+	<integer>0</integer>
+	<key>{6, 5}</key>
+	<integer>0</integer>
+	<key>{6, 6}</key>
+	<integer>0</integer>
+	<key>{6, 7}</key>
+	<integer>0</integer>
+	<key>{6, 8}</key>
+	<integer>0</integer>
+	<key>{6, 9}</key>
+	<integer>0</integer>
+	<key>{7, 0}</key>
+	<integer>0</integer>
+	<key>{7, 10}</key>
+	<integer>0</integer>
+	<key>{7, 11}</key>
+	<integer>0</integer>
+	<key>{7, 12}</key>
+	<integer>0</integer>
+	<key>{7, 13}</key>
+	<integer>0</integer>
+	<key>{7, 14}</key>
+	<integer>0</integer>
+	<key>{7, 15}</key>
+	<integer>0</integer>
+	<key>{7, 16}</key>
+	<integer>0</integer>
+	<key>{7, 17}</key>
+	<integer>0</integer>
+	<key>{7, 18}</key>
+	<integer>0</integer>
+	<key>{7, 19}</key>
+	<integer>0</integer>
+	<key>{7, 1}</key>
+	<integer>0</integer>
+	<key>{7, 20}</key>
+	<integer>0</integer>
+	<key>{7, 2}</key>
+	<integer>0</integer>
+	<key>{7, 3}</key>
+	<integer>0</integer>
+	<key>{7, 4}</key>
+	<integer>0</integer>
+	<key>{7, 5}</key>
+	<integer>0</integer>
+	<key>{7, 6}</key>
+	<integer>0</integer>
+	<key>{7, 7}</key>
+	<integer>0</integer>
+	<key>{7, 8}</key>
+	<integer>0</integer>
+	<key>{7, 9}</key>
+	<integer>0</integer>
+	<key>{8, 0}</key>
+	<integer>0</integer>
+	<key>{8, 10}</key>
+	<integer>0</integer>
+	<key>{8, 11}</key>
+	<integer>0</integer>
+	<key>{8, 12}</key>
+	<integer>0</integer>
+	<key>{8, 13}</key>
+	<integer>0</integer>
+	<key>{8, 14}</key>
+	<integer>0</integer>
+	<key>{8, 15}</key>
+	<integer>0</integer>
+	<key>{8, 16}</key>
+	<integer>0</integer>
+	<key>{8, 17}</key>
+	<integer>0</integer>
+	<key>{8, 18}</key>
+	<integer>0</integer>
+	<key>{8, 19}</key>
+	<integer>0</integer>
+	<key>{8, 1}</key>
+	<integer>0</integer>
+	<key>{8, 20}</key>
+	<integer>0</integer>
+	<key>{8, 2}</key>
+	<integer>0</integer>
+	<key>{8, 3}</key>
+	<integer>0</integer>
+	<key>{8, 4}</key>
+	<integer>0</integer>
+	<key>{8, 5}</key>
+	<integer>0</integer>
+	<key>{8, 6}</key>
+	<integer>0</integer>
+	<key>{8, 7}</key>
+	<integer>0</integer>
+	<key>{8, 8}</key>
+	<integer>0</integer>
+	<key>{8, 9}</key>
+	<integer>0</integer>
+	<key>{9, 0}</key>
+	<integer>0</integer>
+	<key>{9, 10}</key>
+	<integer>0</integer>
+	<key>{9, 11}</key>
+	<integer>0</integer>
+	<key>{9, 12}</key>
+	<integer>0</integer>
+	<key>{9, 13}</key>
+	<integer>0</integer>
+	<key>{9, 14}</key>
+	<integer>0</integer>
+	<key>{9, 15}</key>
+	<integer>0</integer>
+	<key>{9, 16}</key>
+	<integer>0</integer>
+	<key>{9, 17}</key>
+	<integer>0</integer>
+	<key>{9, 18}</key>
+	<integer>0</integer>
+	<key>{9, 19}</key>
+	<integer>0</integer>
+	<key>{9, 1}</key>
+	<integer>0</integer>
+	<key>{9, 20}</key>
+	<integer>0</integer>
+	<key>{9, 2}</key>
+	<integer>0</integer>
+	<key>{9, 3}</key>
+	<integer>0</integer>
+	<key>{9, 4}</key>
+	<integer>0</integer>
+	<key>{9, 5}</key>
+	<integer>0</integer>
+	<key>{9, 6}</key>
+	<integer>0</integer>
+	<key>{9, 7}</key>
+	<integer>0</integer>
+	<key>{9, 8}</key>
+	<integer>0</integer>
+	<key>{9, 9}</key>
+	<integer>0</integer>
+</dict>
+</plist>
