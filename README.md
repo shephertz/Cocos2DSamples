@@ -5,7 +5,7 @@ Sample projects using Cocos2D and Shephertz SDKs
 
 Instructions to setup.
 
-1. Login/Sign-up on AppHQ (ShepHertz developer dashboard) @ http://apphq.shephertz.com
+1. Login/Sign-up on [AppHQ](https://apphq.shephertz.com/register?appwarp=true) (ShepHertz developer dashboard)
 
 2. From the dashboard, create a new app of type appwarp cloud gaming.
 

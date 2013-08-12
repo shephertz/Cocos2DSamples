@@ -92,7 +92,7 @@
 {
     scoreList=[[AppWarpHelper sharedAppWarpHelper] getScores];
     [userRecordsTableView reloadData];
-    [self removeAcitvityIndicator];
+    [self performSelectorOnMainThread:@selector(removeAcitvityIndicator) withObject:nil waitUntilDone:NO];
 }
 
 #pragma mark-------------
@@ -225,14 +225,6 @@
 {
     return YES;
 }
-//- (NSUInteger) supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationLandscapeLeft;
-//}
-//
-//- (BOOL) shouldAutorotate
-//{
-//    return YES;
-//}
+
 
 @end
