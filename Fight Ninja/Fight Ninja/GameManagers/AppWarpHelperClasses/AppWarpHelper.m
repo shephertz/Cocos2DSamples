@@ -41,9 +41,10 @@ static AppWarpHelper *appWarpHelper;
         emailId     = nil;
         password    = nil;
         alreadyRegistered = NO;
-		self.roomId = ROOM_ID;
+		self.roomId = nil;
         numberOfPlayers = 0;
         serviceAPIObject = nil;
+        timer = nil;
 	}
 	return self;
 }
@@ -85,13 +86,14 @@ static AppWarpHelper *appWarpHelper;
 -(void)initializeAppWarp
 {
     
-    
    // NSLog(@"%s",__FUNCTION__);
     [WarpClient initWarp:APPWARP_APP_KEY secretKey:APPWARP_SECRET_KEY];
     
-    ConnectionListener *connectionListener = [[ConnectionListener alloc] initWithHelper:self];
     
     WarpClient *warpClient = [WarpClient getInstance];
+    [warpClient setRecoveryAllowance:60];
+    
+    ConnectionListener *connectionListener = [[ConnectionListener alloc] initWithHelper:self];
     [warpClient addConnectionRequestListener:connectionListener];
     [warpClient addZoneRequestListener:connectionListener];
     [connectionListener release];
@@ -103,9 +105,6 @@ static AppWarpHelper *appWarpHelper;
     NotificationListener *notificationListener = [[NotificationListener alloc]initWithHelper:self];
     [warpClient addNotificationListener:notificationListener];
     [notificationListener release];
-    
-    //[warpClient connect];
-    
 }
 
 -(void)disconnectWarp
@@ -119,8 +118,40 @@ static AppWarpHelper *appWarpHelper;
 
 -(void)connectToWarp
 {
-    [[WarpClient getInstance] connect];
+    [[WarpClient getInstance] connectWithUserName:userName];
 }
+
+-(void)scheduleRecover
+{
+    if (!timer)
+    {
+        timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(recoverConnection) userInfo:nil repeats:YES];
+        [[CCDirector sharedDirector] pause];
+        [[NFStoryBoardManager sharedNFStoryBoardManager] showPausedView:@"Reconnecting ..."];
+    }
+}
+
+-(void)unScheduleRecover
+{
+    if (timer)
+    {
+        [timer invalidate];
+        timer = nil;
+        
+        if ([[CCDirector sharedDirector] isPaused])
+        {
+            [[NFStoryBoardManager sharedNFStoryBoardManager] removePausedView];
+        }
+    }
+}
+
+-(void)recoverConnection
+{
+    NSLog(@"%s",__FUNCTION__);
+   [[WarpClient getInstance] recoverConnection];
+}
+
+
 
 #pragma mark-------------
 #pragma mark --App42CloudAPI Handler Methods
@@ -139,9 +170,11 @@ static AppWarpHelper *appWarpHelper;
     UserService *userService = [serviceAPIObject buildUserService];
     
     
-    @try {
+    @try
+    {
         
-            User *user = [userService createUser:userName password:password emailAddress:emailId];
+        User *user = [userService createUser:userName password:password emailAddress:emailId];
+        [user release];
         return YES;
         
     }
@@ -208,17 +241,25 @@ static AppWarpHelper *appWarpHelper;
         serviceAPIObject.secretKey = APPWARP_SECRET_KEY;//assign secret key
     }
     
-    ScoreBoardService *scoreboardService = [serviceAPIObject buildScoreBoardService];
-    Game *game=[scoreboardService saveUserScore:GAME_NAME gameUserName:userName gameScore:score];
+    @try
+    {
+        ScoreBoardService *scoreboardService = [serviceAPIObject buildScoreBoardService];
+        Game *game=[scoreboardService saveUserScore:GAME_NAME gameUserName:userName gameScore:score];
+        [game release];
+        if (userName)
+        {
+            self.userName=nil;
+        }
+        if (enemyName)
+        {
+            self.enemyName=nil;
+        }
+    }
+    @catch (App42Exception *exception)
+    {
+        
+    }
     
-    if (userName)
-    {
-        self.userName=nil;
-    }
-    if (enemyName)
-    {
-        self.enemyName=nil;
-    }
 }
 
 -(NSMutableArray*)getScores
@@ -251,7 +292,7 @@ static AppWarpHelper *appWarpHelper;
 
 -(void)setCustomDataWithData:(NSData*)data
 {
-    if ([[WarpClient getInstance] getConnectionState]== AUTHENTICATED)
+    if ([[WarpClient getInstance] getConnectionState]== CONNECTED)
     {
         [[WarpClient getInstance] sendUpdatePeers:data];
     }
@@ -277,12 +318,12 @@ static AppWarpHelper *appWarpHelper;
 		return;
 	}
     //NSLog(@"enemyName=%@,  userName=%@",enemyName,userName);
-    if (!enemyName && ![userName isEqualToString:[contentObject objectForKey:USER_NAME]])
+    if (!enemyName && ![userName isEqualToString:[contentObject objectForKey:USER_NAME]] &&[[NFStoryBoardManager sharedNFStoryBoardManager] gameLogicLayer])
     {
         self.enemyName = [contentObject objectForKey:USER_NAME];
         [[[NFStoryBoardManager sharedNFStoryBoardManager] gameLogicLayer] updateEnemyStatus:contentObject];
     }
-    else if ([enemyName isEqualToString:[contentObject objectForKey:USER_NAME]])
+    else if ([enemyName isEqualToString:[contentObject objectForKey:USER_NAME]]&&[[NFStoryBoardManager sharedNFStoryBoardManager] gameLogicLayer])
     {
         [[[NFStoryBoardManager sharedNFStoryBoardManager] gameLogicLayer] updateEnemyStatus:contentObject];
     }

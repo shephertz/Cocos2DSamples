@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "GeoResponseBuilder.h"
+#import "App42Service.h"
+
 @class Geo;
 /**
  *
@@ -19,13 +21,13 @@
  *
  * @see Geo
  */
-@interface GeoService : NSObject{
+@interface GeoService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
 /**
  * Stores the geopints with unique handler on the cloud. Geo point data
  * contains lat, long and marker of the point.
@@ -58,7 +60,7 @@
  *
  *
  */
--(Geo*)getNearByPointsByMaxDistance:(NSString*)storageName latitude:(NSDecimalNumber*)lat longitude:(NSDecimalNumber*)lng distanceInKM:(NSDecimalNumber*)distanceInKM;
+-(Geo*)getNearByPointsByMaxDistance:(NSString*)storageName latitude:(double)lat longitude:(double)lng distanceInKM:(double)distanceInKM;
 /**
  * Search the near by point from specified source point. Points to be
  * searched should already be stored on cloud using unique storage name
@@ -77,7 +79,7 @@
  *         distance from source point.
  *
  */
--(Geo*)getNearByPoint:(NSString*)storageName latitude:(NSDecimalNumber*)lat longitude:(NSDecimalNumber*)lng resultLimit:(int)resultLimit;
+-(Geo*)getNearByPoint:(NSString*)storageName latitude:(double)lat longitude:(double)lng resultLimit:(int)resultLimit;
 /**
  * Search the near by point from specified source point with in specified
  * radius. Points to be searched should already be stored on cloud using
@@ -98,7 +100,7 @@
  *         distance from source point.
  *
  */
--(Geo*)getPointsWithInCircle:(NSString*)storageName latitude:(NSDecimalNumber*)lat longitude:(NSDecimalNumber*)lng radiusInKM:(NSDecimalNumber*)radiusInKM resultLimit:(int)resultLimit;
+-(Geo*)getPointsWithInCircle:(NSString*)storageName latitude:(double)lat longitude:(double)lng radiusInKM:(double)radiusInKM resultLimit:(int)resultLimit;
 /**
  * Fetch the name of all storage stored on the cloud.
  *

@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h"
+#import "cocos2d.h"
 
-@interface AppWarpHelper : NSObject
+@interface AppWarpHelper : CCNode
 {
     ServiceAPI *serviceAPIObject;
     int numberOfPlayers;
+    NSTimer *timer;
 }
 @property(nonatomic,retain) id delegate;
 @property (nonatomic,retain) NSString *roomId;
@@ -36,5 +38,8 @@
 
 -(void)disconnectWarp;
 -(void)connectToWarp;
+-(void)recoverConnection;
+-(void)scheduleRecover;
+-(void)unScheduleRecover;
 -(void)onConnectionFailure:(NSDictionary*)messageDict;
 @end

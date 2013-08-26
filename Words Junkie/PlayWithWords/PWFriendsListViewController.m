@@ -111,7 +111,6 @@
 
 -(void)friendListRetrieved:(NSArray*)freindsList
 {
-    
     NSLog(@"Friends=%@",freindsList);
     [[[PWGameController sharedInstance] dataManager] setFriendsList:freindsList];
     self.friendsList = freindsList;
@@ -309,8 +308,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[SimpleAudioEngine sharedEngine] playEffect:MENU_ITEM_CLICKED];
-
-    //NSLog(@"friendsList=%@, %@",friendsList,[friendsList objectAtIndex:indexPath.row]);
     [[PWGameController sharedInstance] dataManager].player2 = [NSString stringWithFormat:@"%@",[[friendsList objectAtIndex:indexPath.row] objectForKey:@"uid"]];
     [[PWGameController sharedInstance] dataManager].player2_name = [[friendsList objectAtIndex:indexPath.row] objectForKey:@"name"];
     [[[PWGameController sharedInstance] dataManager] createNewGameSession];

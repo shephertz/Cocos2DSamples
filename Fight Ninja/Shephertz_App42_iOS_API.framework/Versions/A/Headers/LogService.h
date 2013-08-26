@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LogResponseBuilder.h"
+#import "App42Service.h"
 /**
  * Centralize logging for your App. This service allows different levels e.g.
  * info, debug, fatal, error etc. to log a message and query the messages based
@@ -17,14 +18,13 @@
  * @see Log
  *
  */
-@interface LogService : NSObject{
+@interface LogService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
 
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
 
 /**
  * Logs the info message
@@ -298,5 +298,17 @@
  *
  */
 -(Log*)fetchLogByDateRange:(NSDate*)startDate endDate:(NSDate*)endDate max:(int)max offset:(int)offset;
+
+
+/**
+ * Log event on App42 cloud for analytics purpose
+ * @param eventName
+ */
+-(void)setEventWithName:(NSString*)eventName forModule:(NSString*)moduleName;
+/**
+* Log event on App42 cloud for analytics purpose
+* @param eventName
+*/
+-(void)setEventWithName:(NSString*)eventName;
 
 @end

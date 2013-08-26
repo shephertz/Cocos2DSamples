@@ -15,7 +15,8 @@
  *
  */
 
-@interface LogMessage : App42Response{
+@interface LogMessage : App42Response
+{
     Log *logObject;
     
     NSString *message;

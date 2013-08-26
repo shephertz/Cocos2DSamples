@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "RewardResponseBuilder.h"
+#import "App42Service.h"
+
 @class Reward;
 
 /**
@@ -26,13 +28,15 @@
  *
  * @see Game, RewardPoint, Score, ScoreBoard
  */
-@interface RewardService : NSObject{
+@interface RewardService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
+    
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Creates Reward. Reward can be Sword, Energy etc. When Reward Points have
  * to be added the Reward name created using this method has to be
@@ -131,5 +135,69 @@
  *
  */
 -(Reward*)getGameRewardPointsForUser:(NSString*)gameName userName:(NSString*)userName;
+
+/**
+ * This function provides a list of specified number of top reward earners
+ * for a specific game.
+ *
+ * @param gameName
+ *            - Name of the game for which reward earners are to be fetched
+ * @param rewardName
+ *            - Name of the reward for which list of earners is to be
+ *            fetched
+ * @param max
+ *            - Specifies the number of top earners to be fetched
+ * @return ArrayList of Reward object
+ * @throws App42Exception
+ */
+-(NSArray*)getTopNRewardEarners:(NSString*)gameName rewardName:(NSString*)rewardName max:(int)max;
+
+
+/**
+ * This function returns you the details of all the specific rewards earned
+ * by the specified user.
+ *
+ * @param userName
+ *            - Name of the user whose rewards are to be fetched
+ * @param rewardName
+ *            - Name of the reward for which details are to be fetched
+ * @return ArrayList of Reward object
+ * @throws App42Exception
+ */
+-(NSMutableArray*)getAllRewardsByUser:(NSString*)userName rewardName:(NSString*)rewardName;
+
+
+/**
+ * This function returns you a list of group wise users who earned the top
+ * rewards in the specified game .
+ *
+ * @param gameName
+ *            - Name of the game for which top reward earners are to be
+ *            fetched
+ * @param rewardName
+ *            - Name of the reward for which top earners are to be listed
+ * @param userList
+ *            - List of group wise users earning specified rewards
+ * @return ArrayList of Reward object
+ * @throws App42Exception
+ */
+-(NSArray*)getTopNRewardEarnersByGroup:(NSString*)gameName rewardName:(NSString*)rewardName userList:(NSArray*)userList;
+
+
+/**
+ * This function returns you a list of group wise users who earned the top
+ * rewards in the specified game .
+ *
+ * @param gameName
+ *            - Name of the game for which top reward earners are to be
+ *            fetched
+ * @param rewardName
+ *            - Name of the reward for which top earners are to be listed
+ * @param userName
+ *            - Name of the user whose rewards are to be fetched
+ * @return Reward object containing the ranking for the specified user
+ * @throws App42Exception
+ */
+-(Reward*) getUserRankingOnReward:(NSString*)gameName rewardName:(NSString*)rewardName userName:(NSString*)userName;
 
 @end

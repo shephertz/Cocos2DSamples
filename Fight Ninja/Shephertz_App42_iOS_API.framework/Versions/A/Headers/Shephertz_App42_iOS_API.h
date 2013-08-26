@@ -12,6 +12,7 @@
 #import <Shephertz_App42_iOS_API/SocialService.h>
 
 #import <Shephertz_App42_iOS_API/ServiceAPI.h>
+#import <Shephertz_App42_iOS_API/App42API.h>
 
 #import <Shephertz_App42_iOS_API/PushNotificationService.h>
 #import <Shephertz_App42_iOS_API/PushNotification.h>
@@ -89,6 +90,12 @@
 #import <Shephertz_App42_iOS_API/StorageService.h>
 #import <Shephertz_App42_iOS_API/JSONDocument.h>
 #import <Shephertz_App42_iOS_API/Storage.h>
+#import "Query.h"
+#import "QueryBuilder.h"
+#import "GeoQuery.h"
+#import <Shephertz_App42_iOS_API/Buddy.h>
+#import <Shephertz_App42_iOS_API/BuddyService.h>
+#import <Shephertz_App42_iOS_API/BuddyResponseBuilder.h>
 
 #import <Shephertz_App42_iOS_API/Upload.h>
 #import <Shephertz_App42_iOS_API/UploadService.h>
@@ -97,8 +104,6 @@
 
 #import <Shephertz_App42_iOS_API/Review.h>
 #import <Shephertz_App42_iOS_API/ReviewService.h>
-
-
 
 
 #import <Shephertz_App42_iOS_API/Geo.h>

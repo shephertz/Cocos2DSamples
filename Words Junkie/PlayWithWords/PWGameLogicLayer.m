@@ -202,7 +202,7 @@ static PWGameLogicLayer *_sharedObject;
     if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
     {
         [self createBgLayerForIPhone];
-        [self createCharacterMenu];
+        [self createCharacterMenuForIPhone];
     }
     else
     {
@@ -210,7 +210,7 @@ static PWGameLogicLayer *_sharedObject;
         [self createCharacterMenuForIPad];
     }
     [self createScrollLayer];
-    [self createWordBoardWithRows];
+    [self createWordBoard];
 }
 
 -(void)startGame
@@ -527,7 +527,7 @@ static PWGameLogicLayer *_sharedObject;
     self.hudLayer = hud;
 }
 
--(void)createWordBoardWithRows
+-(void)createWordBoard
 {
     CGSize s = _panZoomLayer.contentSize;
     
@@ -535,20 +535,20 @@ static PWGameLogicLayer *_sharedObject;
     {
         rowWidth = TILE_WIDTH_IPHONE;
         rowHeight = TILE_HEIGHT_IPHONE;
-        startPoint = ccp((s.width-numberOfColumns*rowWidth)/2, s.height-TILE_Y_OFFSET_IPHONE/2-((12-numberOfRows)*rowHeight/2));
+        startPoint = ccp((s.width-numberOfColumns*rowWidth)/2, s.height-TILE_Y_OFFSET_IPHONE/2-((MAX_NUMBER_ROWS_ALLOWED-numberOfRows)*rowHeight/2));
     }
     else
     {
         rowWidth = TILE_WIDTH;
         rowHeight = TILE_HEIGHT;
-        startPoint = ccp((s.width-numberOfColumns*rowWidth)/2, s.height-TILE_Y_OFFSET/2-((12-numberOfRows)*rowHeight/2));
+        startPoint = ccp((s.width-numberOfColumns*rowWidth)/2, s.height-TILE_Y_OFFSET/2-((MAX_NUMBER_ROWS_ALLOWED-numberOfRows)*rowHeight/2));
     }
     
     for (int i=0; i<numberOfRows; i++)
     {
         CGPoint refPoint = CGPointMake(startPoint.x+rowWidth/2, startPoint.y-rowHeight*numberOfRows+rowHeight/2+i*rowHeight);
         
-        for (int j=0; j<numberOfRows; j++)
+        for (int j=0; j<numberOfColumns; j++)
         {
             
             CCSprite *tile = [CCSprite spriteWithFile:@"Tile_Normal.png"];
@@ -584,17 +584,17 @@ static PWGameLogicLayer *_sharedObject;
     }
 }
 */
--(void)createCharacterMenu
+-(void)createCharacterMenuForIPhone
 {
         
     CGSize size = [[CCDirector sharedDirector] winSize];
     float x_pos = 0;
     
     NSMutableArray *alphabetsArray =[[NSMutableArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
-    
+    int alphabetCount = [alphabetsArray count];
     int numberOfCharactersDisplayedOnce;
     
-    for (int i = 0; i<26; i++)
+    for (int i = 0; i<alphabetCount; i++)
     {
         CCSprite *tile = [CCSprite spriteWithFile:@"Tile_Small.png"];
         CGSize tileSize = tile.contentSize;
@@ -666,14 +666,14 @@ static PWGameLogicLayer *_sharedObject;
     float x_pos = 0;
     
     NSMutableArray *alphabetsArray =[[NSMutableArray alloc]initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
-    
-    for (int i = 0; i<26; i++)
+    int alphabetCount = [alphabetsArray count];
+    for (int i = 0; i<alphabetCount; i++)
     {
         CCSprite *tile = [CCSprite spriteWithFile:@"Tile_Small.png"];
         CGSize tileSize = tile.contentSize;
         if (!x_pos)
         {
-            x_pos = (size.width-26*(tileSize.width+1))/2;
+            x_pos = (size.width-alphabetCount*(tileSize.width+1))/2;
         }
         
         PWCharacter *character = [PWCharacter layerWithColor:ccc4(25, 100, 50, 0) width:tileSize.width height:tileSize.height];
@@ -1176,7 +1176,6 @@ static PWGameLogicLayer *_sharedObject;
     
     for (NSString *key in keys)
     {
-        //NSLog(@"key=%@...[gameDataDict objectForKey:key]=%@",key,[gameDataDict objectForKey:key]);
         [self createCharacter:[gameDataDict objectForKey:key] atIndex:key];
     }
 }
@@ -1204,9 +1203,7 @@ static PWGameLogicLayer *_sharedObject;
     label.position = ccp(rowWidth/2, rowHeight/2);
     label.color = ccWHITE;
     [character addChild:label z:2];
-    //int z_order = index.x + index.y+10;
     [_panZoomLayer addChild:character z:10];
-    //NSLog(@"character.position=%@",NSStringFromCGPoint(character.position));
 }
 
 #pragma mark -
@@ -1283,32 +1280,20 @@ static PWGameLogicLayer *_sharedObject;
 {
     [self reorderSelectedChar];
     [[PWGameController sharedInstance].dataManager addAlphabet:selectedChar.alphabet atIndex:NSStringFromCGPoint(lastPlacedCharIndex)];
-   // [[PWGameController sharedInstance].dataManager saveSessionLocally];
     [selectedChar setOpacity:0];
     selectedChar.isMovable  = NO;
     selectedChar.isPlaced   = YES;
     self.selectedChar = nil;
-    
-    if (![[PWGameController sharedInstance] tutorialStatus])
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:NSStringFromCGPoint(lastPlacedCharIndex) forKey:TUTORIAL_CHAR_INDEX];
-        [[PWGameController sharedInstance] setNextTutorialStep:kSelectCharcater];
-        [[[PWGameController sharedInstance] tutorialManager] showTutorialStep:[[PWGameController sharedInstance] nextTutorialStep]];
-    }
     lastPlacedCharIndex = ccp(-1, -1);
 }
 
 -(void)placeCharacterAtCorrectPlaceOnEndTouchPoint:(CGPoint)touchPoint
 {
-   // NSLog(@"%s",__FUNCTION__);
     lastPlacedCharIndex = [self getIndexForThePosition:touchPoint];
-    //NSLog(@"index = %@",NSStringFromCGPoint(index));
     [self enableScrolling:YES];
     [selectedChar removeFromParent];
     selectedChar.tag = [self getCharTagForIndex:lastPlacedCharIndex];
     [_panZoomLayer addChild:selectedChar];
-    
-    
     if ([self isBeyondTheBoundary:lastPlacedCharIndex])
     {
         [selectedChar removeFromParentAndCleanup:YES];
@@ -1318,11 +1303,9 @@ static PWGameLogicLayer *_sharedObject;
     else if ([self isCharPlaceableAtIndex:lastPlacedCharIndex])
     {
         [[SimpleAudioEngine sharedEngine] playEffect:CHARACTER_PLACED];
-
         [menuLayer setButtonsEnabled:YES];
         currentGameMode = kSearchMode;
         CGPoint pos = [self getCorrectCharPositionForTheIndex:lastPlacedCharIndex];
-        //NSLog(@"position = %@",NSStringFromCGPoint(pos));
         [selectedChar setPosition:pos];
         [self placeTheChar];
     }
@@ -1345,7 +1328,7 @@ static PWGameLogicLayer *_sharedObject;
     return (BASE_TAG_FOR_CHAR+BASE_TAG_FOR_CHAR*index.x+index.y);
 }
 
--(void)resizeTheCharacterWithMapCell
+-(void)resizeTheCharacterToTileSize
 {
     [selectedChar setContentSize:CGSizeMake(rowWidth, rowHeight)];
     CCLabelTTF *label = (CCLabelTTF *)[selectedChar getChildByTag:10];
@@ -1957,7 +1940,6 @@ static PWGameLogicLayer *_sharedObject;
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //NSLog(@"%s",__FUNCTION__);
     UITouch *touch = [touches anyObject];
    	CGPoint  point = [touch locationInView:[[CCDirector sharedDirector] view]];
 	CGPoint spoint = [[CCDirector sharedDirector] convertToGL:point];

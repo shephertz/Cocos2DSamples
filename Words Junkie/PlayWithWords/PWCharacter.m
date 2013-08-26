@@ -148,23 +148,18 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    
     PWGameLogicLayer *gameLayer = [PWGameLogicLayer sharedInstance];
-    //NSLog(@"isMovable=%d..isPlaced=%d..[self containsTouchLocation:touch]=%d..gameLayer.currentGameMode=%d,%d",isMovable,isPlaced,[self containsTouchLocation:touch],gameLayer.currentGameMode,kPlacementMode);
     
 	if(self.visible && ([gameLayer selectedChar]==NULL || isMovable) && [self containsTouchLocation:touch] && gameLayer.currentGameMode==kPlacementMode && !isPlaced && gameLayer.turnIndicator==kPlayerOneTurn)
 	{
-        
         [gameLayer enableScrolling:NO];
         [self startNotPlaceableIndicatorAnimation:NO];
         gameLayer.selectedChar = self;
-        
-        [gameLayer resizeTheCharacterWithMapCell];
+        [gameLayer resizeTheCharacterToTileSize];
         [self changeTextureWithImage:@"Tile_Placed.png"];
         
         CGPoint  point = [touch locationInView:[[CCDirector sharedDirector] view]];
         CGPoint spoint = [[CCDirector sharedDirector] convertToGL:point];
-        
         prevTouchPoint = [self convertToNodeSpace:spoint];
         
         if (!isMovable)
@@ -172,56 +167,29 @@
             [[[PWGameController sharedInstance] tutorialManager] setTutorialElementsVisible:NO];
             [gameLayer getSelectedCharFromCharacterMenuWithLetter:alphabet withPositionINdex:pos_index];
         }
-        
-        
         self.isMovable = YES;
-        [self illuminateChar:YES];
         [self animateTheChar:YES];
         gameLayer.isCharacterSelected = YES;
         return YES;
-        
 	}
-    
 	return NO;
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    //NSLog(@"%s",__FUNCTION__);
-    
     CGPoint  point = [touch locationInView:[[CCDirector sharedDirector] view]];
     CGPoint spoint = [[CCDirector sharedDirector] convertToGL:point];
-	
 	spoint = [self convertToNodeSpace:spoint];
     
     self.position = CGPointMake(self.position.x+spoint.x-prevTouchPoint.x, self.position.y+spoint.y-prevTouchPoint.y);
-    
-    //NSLog(@"position=%@",NSStringFromCGPoint(self.position));
 }
-
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    //NSLog(@"%s",__FUNCTION__);
-     
     CGPoint  point = [touch locationInView:[[CCDirector sharedDirector] view]];
     CGPoint spoint = [[CCDirector sharedDirector] convertToGL:point];
-	
 	spoint = [self convertToNodeSpace:spoint];
     
-    [self illuminateChar:NO];
     [self animateTheChar:NO];
-
-    
-    //self.position = CGPointMake(self.position.x+spoint.x-prevTouchPoint.x, self.position.y+spoint.y-prevTouchPoint.y);
-        
-    
-    
-//    CGPoint index = [[PWGameLogicLayer sharedInstance] getIndexForThePosition:self.position];
-//    NSLog(@"Touch_index = %@",NSStringFromCGPoint([[PWGameLogicLayer sharedInstance] getIndexForThePosition:spoint]));
-//    NSLog(@"index = %@",NSStringFromCGPoint(index));
-//    CGPoint pos = [[PWGameLogicLayer sharedInstance] getCorrectCharPositionForTheIndex:index];
-//    NSLog(@"index = %@",NSStringFromCGPoint(pos));
-    
 }
 
 -(void)changeTextureWithImage:(NSString*)imageName

@@ -8,18 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "Social.h"
+#import "App42Service.h"
 /**
  * Connect to the User's multiple social accounts. Also used to update the
  * status individually or all at once for the linked social accounts.
  */
-@interface SocialService : NSObject{
+@interface SocialService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
-
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 
 /**
  * Links the User Facebook access credentials to the App User account.
@@ -181,4 +182,28 @@
  */
 -(Social *)updateSocialStatusForAll:(NSString *)userName status:(NSString*)status;
 
+
+/**
+ * This function returns a list of facebook friends of the specified user by
+ * accessing the facebook account.
+ *
+ * @param userName
+ *            - Name of the user whose Facebook friends account has to be
+ *            retrieve
+ * @return Social Object
+ * @throws App42Exception
+ */
+-(Social *)getFacebookFriendsFromLinkUser:(NSString *) userName;
+
+/**
+ * This function returns a list of facebook friends of the specified user
+ * using a given authorization token. To get the friend list here, user
+ * needs not to log into the facebook account.
+ *
+ * @param accessToken
+ *            - Facebook Access Token that has been received after authorization
+ * @return Social Object
+ * @throws App42Exception
+ */
+-(Social *)getFacebookFriendsFromAccessToken:(NSString *)accessToken;
 @end

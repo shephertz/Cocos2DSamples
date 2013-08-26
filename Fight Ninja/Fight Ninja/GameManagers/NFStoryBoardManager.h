@@ -15,6 +15,7 @@
     LeaderBoardViewController *leaderboardController;
     UserNameController        *userNameController;
     FNGameLogicLayer          *gameLogicLayer;
+    UIView                    *pauseView;
 }
 
 @property (nonatomic,assign) FNGameLogicLayer          *gameLogicLayer;
@@ -29,4 +30,6 @@
 -(void)showGameLoadingIndicator;
 -(void)removeGameLoadingIndicator;
 -(void)updatePlayerDataToServerWithDataDict:(NSDictionary*)dataDict;
+-(void)showPausedView:(NSString*)messageString;
+-(void)removePausedView;
 @end

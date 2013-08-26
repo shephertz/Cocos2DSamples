@@ -28,6 +28,7 @@
     NSString *linkedinSecretKey;
     NSString *linkedinAccessToken;
     NSString *linkedinAccessTokenSecret;
+    NSMutableArray *friendsList;
     
 }
 /*!
@@ -82,6 +83,11 @@
  *set and get the access token secret for the LinkedIn.
  */
 @property(nonatomic,retain) NSString *linkedinAccessTokenSecret;
+
+/*!
+ *set and get friendsList.
+ */
+@property(nonatomic,retain) NSMutableArray *friendsList;
 
 @end
 

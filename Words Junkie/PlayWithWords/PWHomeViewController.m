@@ -377,7 +377,6 @@
 }
 -(void)reloadTableView
 {
-    
     [[[PWGameController sharedInstance] dataManager] getAllGames];
     [self getFinishedGames];
     [gamesListView reloadData];

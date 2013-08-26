@@ -12,6 +12,8 @@
 #import <Foundation/Foundation.h>
 #import "Profile.h"
 #import "UserResponseBuilder.h"
+#import "App42Service.h"
+
 @class User;
 @class App42Response;
 
@@ -32,13 +34,14 @@ extern NSString *const FEMALE;
  */
 
 
-@interface UserService : NSObject{
+@interface UserService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
+   
 }
-@property(nonatomic,retain)NSString *apiKey;
-@property(nonatomic,retain)NSString *secretKey;
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Create a User with userName, password & emailAddress
  * 
@@ -49,7 +52,7 @@ extern NSString *const FEMALE;
  * @param emailAddress
  *            - Email address of the user
  * 
- * @return The created User object.
+ * @return The created User object. Developer, using this method, is solely responsible for releasing this returned object.
  * 
  */
 -(User*)createUser:(NSString*)uName password:(NSString*)pwd emailAddress:(NSString*)emailAddress;
@@ -66,7 +69,7 @@ extern NSString *const FEMALE;
  * @param roleList
  *            - List of roles to be assigned to User
  * 
- * @return The created User object with role list.
+ * @return The created User object with role list.Developer, using this method, is solely responsible for releasing this returned object.
  * 
  */
 -(User*)createUser:(NSString*)uName password:(NSString*)pwd emailAddress:(NSString*)emailAddress roleList:(NSArray*)roleList;
@@ -177,12 +180,7 @@ extern NSString *const FEMALE;
  * 
  */
 -(User*)getUserByEmailId:(NSString*)emailId;
-/**
- *  Gets user details based on userName
- *  @param userName UserName which should be unique for the App
- *  @return Returns True or False based on User lock status 
- */
--(User*)isUserLocked:(NSString*)userName;
+
 /**
  * Updates the User's Email Address based on userName. Note: Only email can
  * be updated. Username cannot be updated.
@@ -232,10 +230,10 @@ extern NSString *const FEMALE;
  * @param pwd
  *            - Password for the User
  * 
- * @returns App42Response Object if authenticated successfully.
+ * @returns The authenticated User object. Developer, using this method, is solely responsible for releasing this returned object.
  * 
  */
--(App42Response*)authenticateUser:(NSString*)uName password:(NSString*)password;
+-(User*)authenticateUser:(NSString*)uName password:(NSString*)password;
 /**
  * Locks the user based on the userName. Apps can use these feature to lock
  * a user because of reasons specific to their usercase e.g. If payment not
@@ -320,4 +318,16 @@ extern NSString *const FEMALE;
  * 
  */
 -(User*)resetUserPassword:(NSString*)uName pwd:(NSString*)pwd;
+
+/**
+ * Updates the User password based on userName. Username cannot be updated.
+ *
+ * @param uName
+ *            - UserName which should be unique for the App
+ *
+ * @returns App42Response Object
+ *
+ */
+
+-(User*)resetUserPassword:(NSString*)uName;
 @end

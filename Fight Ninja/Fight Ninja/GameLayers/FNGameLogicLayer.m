@@ -182,6 +182,7 @@
     }
     enemy.opacity = 255;
     isEnemyAdded = YES;
+    
 	CCSprite *target = [CCSprite spriteWithFile:@"Bullet-blue.png"];
 	
 	// Determine where to spawn the target along the Y axis
@@ -319,6 +320,7 @@
             //[[AppWarpHelper sharedAppWarpHelper] saveScore];
             [[AppWarpHelper sharedAppWarpHelper] performSelectorInBackground:@selector(saveScore) withObject:nil];
             [[AppWarpHelper sharedAppWarpHelper] disconnectWarp];
+            [[NFStoryBoardManager sharedNFStoryBoardManager] setGameLogicLayer:nil];
             // Run the GameOverScene
             [[CCDirector sharedDirector] replaceScene:[FNGameOverLayer scene]];
         }
@@ -337,7 +339,10 @@
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    if ([[CCDirector sharedDirector] isPaused])
+    {
+        return;
+    }
 	// Choose one of the touches to work with
 	UITouch *touch = [touches anyObject];
 	CGPoint location = [touch locationInView:[touch view]];

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ItemData.h"
 #import "CatatlogueResponseBuilder.h"
+#import "App42Service.h"
 /**
  * This Service provides a complete cloud based catalogue management. An app can
  * keep all its items based on category on the Cloud. This service provides
@@ -23,13 +24,14 @@
  * @see Cart, ItemData
  *
  */
-@interface CatalogueService : NSObject{
+@interface CatalogueService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Creates a Catalogue for a particular App. Categories can be added to the
  * Catalogue

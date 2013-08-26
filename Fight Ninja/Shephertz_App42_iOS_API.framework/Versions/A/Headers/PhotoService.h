@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AlbumResponseBuilder.h"
+#import "App42Service.h"
+
 @class Album;
 @class App42Response;
 /**
@@ -19,14 +21,14 @@
  * @see Album
  * @see Photo
  */
-@interface PhotoService : NSObject{
+@interface PhotoService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
-    
+        
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
 
 /**
  * Adds Photo for a particular user and album. The Photo is uploaded on the
@@ -183,5 +185,48 @@
  *
  */
 -(App42Response*)removePhoto:(NSString*)userName albumName:(NSString*)albumName photoName:(NSString*)photoName;
+
+/**
+ * Grant access to the particular Photo from the specified Album of a particular
+ * user for the list of ACls. 
+ *
+ * @param userName
+ *            - Name of the User who is giving access permission
+ * @param albumName
+ *            - Name of the Album in which photo has to be accessed
+ * @param photoName
+ *            - Name of the Photo for which access is requested
+ * @param aclList
+ *            - List of the Acl objects which holds the userNames and permission types
+ *
+ * @return Album object 
+ *         
+ */
+
+-(Album*) grantAccessToPhoto:(NSString*)photoName
+                     inAlbum:(NSString*)albumName
+                      ofUser:(NSString*)userName
+                 withAclList:(NSArray *)aclList;
+
+/**
+ * Revoke access to the particular Photo from the specified Album of a particular
+ * user for the list of ACls.
+ *
+ * @param userName
+ *            - Name of the User who is giving access permission
+ * @param albumName
+ *            - Name of the Album in which photo has to be accessed
+ * @param photoName
+ *            - Name of the Photo for which access is requested
+ * @param aclList
+ *            - List of the Acl objects which holds the userNames and permission types
+ *
+ * @return Album object
+ *
+ */
+-(Album*) revokeAccessToPhoto:(NSString*)photoName
+                      inAlbum:(NSString*)albumName
+                       ofUser:(NSString*)userName
+                  withAclList:(NSArray *)aclList;
 
 @end

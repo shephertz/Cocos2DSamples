@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ImageProcessorResponseBuilder.h"
 #import "Image.h"
+#import "App42Service.h"
 /**
  * The ImageProcessor service is a Image utility service on the Cloud.
  * Developers can upload files on the cloud and perform various Image
@@ -20,13 +21,14 @@
  *
  * @see Image
  */
-@interface ImageProcessorService : NSObject{
+@interface ImageProcessorService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
+    
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
 /**
  * Resize image. Returns the original image url and converted image url.
  * Images are stored on the cloud and can be accessed through the urls

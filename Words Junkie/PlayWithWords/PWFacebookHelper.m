@@ -268,13 +268,8 @@ static PWFacebookHelper *fbHelper;
 }
 
 
-
-//username: shyamchetan@yahoo.com
-// password : planet
-
 -(void)getFriendsPlayingThisGame
 {
-    
         // Query to fetch the active user's friends, limit to 25.
         NSString *query = @"SELECT uid, name, is_app_user FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=me()) AND is_app_user=1";
     
@@ -307,7 +302,6 @@ static PWFacebookHelper *fbHelper;
                                   }
                               }];
     
-    //SELECT uid2 FROM friend WHERE uid1 = me() AND uid2 = {YOUR_FRIEND2_ID}
 }
 
 -(void)getRelationShipWithPlayerTwo

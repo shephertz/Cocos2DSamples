@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ReviewResponseBuilder.h"
+#import "App42Service.h"
+
 @class Review;
 /**
  * The service is a Review & Rating manager for any item. The item can be
@@ -21,13 +23,13 @@
  */
 
 
-@interface ReviewService : NSObject{
-    
-    NSString *apiKey;
-    NSString *secretKey;
+@interface ReviewService : App42Service
+{
+   
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Creates review for the specified item on the cloud
  *
@@ -157,4 +159,6 @@
  */
 -(App42Response*)unmute:(NSString*)reviewId;
 
+-(Review*)addComment:(NSString*)comment byUser:(NSString*)userID forItem:(NSString*)itemID;
+-(NSArray*)getCommentsByItem:(NSString*)itemID;
 @end

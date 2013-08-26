@@ -16,6 +16,7 @@
 
 #define     NUMBER_OF_ROWS          10
 #define     NUMBER_OF_COLUMNS       10
+#define     MAX_NUMBER_ROWS_ALLOWED 12
 
 #define     TILE_WIDTH              50.0f
 #define     TILE_HEIGHT             51.0f

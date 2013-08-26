@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameResponseBuilder.h"
+#import "App42Service.h"
 /**
  * The Game service allows Game, User, Score and ScoreBoard Management on the
  * Cloud. The service allows Game Developer to create a Game and then do in Game
@@ -22,13 +23,15 @@
  *
  * @see Reward, RewardPoint, Score, ScoreBoard
  */
-@interface GameService : NSObject{
+@interface GameService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
+    
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Creates a game on the cloud
  *

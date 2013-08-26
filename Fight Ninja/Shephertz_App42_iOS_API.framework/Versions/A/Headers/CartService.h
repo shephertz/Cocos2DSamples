@@ -11,6 +11,7 @@
 #import "CartResponseBuilder.h"
 #import "Cart.h"
 #import "App42Response.h"
+#import "App42Service.h"
 /**
  * This is Cloud Persistent Shopping Cart Service. App Developers can use this
  * to create a Shopping Cart. Add Items and Check Out items. It also maintains
@@ -42,13 +43,15 @@ extern NSString *const PENDING;
 
 
 
-@interface CartService : NSObject{
+@interface CartService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
+    
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Creates a Cart Session for the specified User
  *

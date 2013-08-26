@@ -145,4 +145,47 @@ static NFStoryBoardManager *nFStoryBoardManager;
 }
 
 
+-(void)showPausedView:(NSString*)messageString
+{
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    pauseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    pauseView.backgroundColor = [UIColor clearColor];
+    AppController *app = (AppController *)[[UIApplication sharedApplication] delegate];
+    [app.navController.view addSubview:pauseView];
+    [pauseView release];
+    
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    [bgView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+    [pauseView addSubview:bgView];
+    [bgView release];
+    
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [indicator setCenter:pauseView.center];
+    indicator.tag = 10;
+    [pauseView addSubview:indicator];
+    
+    
+    UILabel *message = [[UILabel alloc] initWithFrame:CGRectMake(0, pauseView.center.y+60, size.width, 100)];
+    message.backgroundColor = [UIColor clearColor];
+    message.textAlignment=UITextAlignmentCenter;
+    message.textColor = [UIColor whiteColor];
+    message.text = messageString;
+    [pauseView addSubview:message];
+    [message release];
+    
+    [indicator startAnimating];
+}
+
+-(void)removePausedView
+{
+    if (pauseView)
+    {
+        UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)[pauseView viewWithTag:10];
+        [indicator stopAnimating];
+        [pauseView removeFromSuperview];
+        pauseView=nil;
+        [[CCDirector sharedDirector] resume];
+    }
+}
+
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "GameResponseBuilder.h"
+#import "App42Service.h"
+
 @class Game;
 /**
  * ScoreBoard allows storing, retrieving, querying and ranking scores for users
@@ -26,13 +28,15 @@
  * @see Game, RewardPoint, RewardPoint, Score
  *
  */
-@interface ScoreBoardService : NSObject{
+@interface ScoreBoardService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
+
 /**
  * Saves the User score for a game
  *
@@ -158,6 +162,33 @@
 -(Game*)getTopRankingsByGroup:(NSString*)gameName group:(NSArray*)group;
 
 /**
+ * Retrieves the Top Rankings for the specified game
+ *
+ * @param gameName
+ *            - Name of the game for which ranks have to be fetched
+ * @param startDate
+ *            -Start date from which the ranking have to be fetched
+ * @param endDate
+ *            - End date up to which the ranking have to be fetched
+ * @return the Top rankings for a game
+ * @throws App42Exception
+ */
+-(Game*)getTopRankings:(NSString*)gameName startDate:(NSDate*) startDate endDate:(NSDate*) endDate;
+
+
+/**
+ *
+ * @param gameName
+ * @param startDate
+ * @param endDate
+ * @param max
+ * @return
+ * @throws App42Exception
+ */
+-(Game*)getTopNRankers:(NSString*)gameName startDate:(NSDate*) startDate endDate:(NSDate*) endDate max:(int)max;
+
+
+/**
  * Retrieves the last score made by the user in all games
  *
  * @param userName
@@ -166,7 +197,9 @@
  * @return the Top rankers for a game
  *
  */
+
 -(Game*)getLastGameScore:(NSString*)userName;
+
 
 /**
  * Retrieves the User Ranking for the specified game
@@ -180,4 +213,62 @@
  *
  */
 -(Game*)getUserRanking:(NSString*)gameName userName:(NSString*)userName;
+
+/**
+ * This function returns the top score attained by the specified user in the
+ * game.
+ *
+ * @param gameName
+ *            - Name of the game
+ * @param userName
+ *            - Name of the user for which score has to retrieve
+ * @return Game Object
+ * @throws App42Exception
+ */
+-(Game*)getLastScoreByUser:(NSString*)gameName userName:(NSString*)userName;
+
+/**
+ *
+ * @param scoreId
+ * @param gameScore
+ * @return
+ * @throws App42Exception
+ */
+-(Game*)editScoreValueById:(NSString*)scoreId gameScore:(double)gameScore;
+
+/**
+ * This function returns the specified number of top rankers in a specific
+ * game in buddy group.
+ *
+ * @param gameName
+ *            - Name of the game
+ * @param userName
+ *            - Name of the user who fetch scores in group
+ * @param owerName
+ *            - Group owner name
+ * @param GroupName
+ *            - Name of group
+ * @return Game Object
+ * @throws App42Exception
+ */
+-(Game*)getTopRankersFromBuddyGroup:(NSString*) gameName
+                           userName:(NSString*) userName
+                          ownerName:(NSString*)ownerName
+                          groupName:(NSString*)groupName;
+
+/**
+ *
+ * @param gameName
+ * @param userName
+ * @param fbAccessToken
+ * @param max
+ * @return Game Object
+ * @throws App42Exception
+ */
+-(Game*)getTopNRankersFromFacebook:(NSString*) gameName
+                          userName:(NSString*) userName
+                     fbAccessToken:(NSString*)fbAccessToken
+                               max:(int)max;
+
+
 @end

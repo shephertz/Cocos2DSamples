@@ -148,8 +148,6 @@
 		D7601A6A16F81F4E0073587B /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = D7601A6916F81F4E0073587B /* vec4.c */; };
 		D7601A6F16F81F4E0073587B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7601A6E16F81F4E0073587B /* main.m */; };
 		D7601A7216F81F4E0073587B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7601A7116F81F4E0073587B /* AppDelegate.m */; };
-		D7601A7F16F820EF0073587B /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7601A7E16F820EF0073587B /* Shephertz_App42_iOS_API.framework */; };
-		D7601A8116F821150073587B /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7601A8016F821150073587B /* AppWarp_iOS_SDK.framework */; };
 		D7601A8E16F823A40073587B /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7601A8D16F823A40073587B /* IntroLayer.m */; };
 		D7601A9116F824090073587B /* FNGameLogicLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7601A9016F824090073587B /* FNGameLogicLayer.m */; };
 		D7601ABD16F828480073587B /* UniversalBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D7601AB616F828480073587B /* UniversalBackButton.png */; };
@@ -168,6 +166,8 @@
 		D7601AE816F82D8A0073587B /* Bullet-red.png in Resources */ = {isa = PBXBuildFile; fileRef = D7601AE516F82D8A0073587B /* Bullet-red.png */; };
 		D7601AE916F82D8A0073587B /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = D7601AE616F82D8A0073587B /* Enemy.png */; };
 		D7601AEC16F82E840073587B /* FNGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7601AEB16F82E840073587B /* FNGameOverLayer.m */; };
+		D777C3E917C749D8009A9437 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D777C3E817C749D8009A9437 /* Shephertz_App42_iOS_API.framework */; };
+		D7C4275617CB27CF00A99E01 /* AppWarp_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C4275517CB27CF00A99E01 /* AppWarp_iOS_SDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -448,8 +448,6 @@
 		D7601A6E16F81F4E0073587B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7601A7016F81F4E0073587B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7601A7116F81F4E0073587B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D7601A7E16F820EF0073587B /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
-		D7601A8016F821150073587B /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
 		D7601A8C16F823A40073587B /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		D7601A8D16F823A40073587B /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		D7601A8F16F824090073587B /* FNGameLogicLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNGameLogicLayer.h; sourceTree = "<group>"; };
@@ -488,6 +486,8 @@
 		D7601AE616F82D8A0073587B /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enemy.png; sourceTree = "<group>"; };
 		D7601AEA16F82E840073587B /* FNGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNGameOverLayer.h; sourceTree = "<group>"; };
 		D7601AEB16F82E840073587B /* FNGameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNGameOverLayer.m; sourceTree = "<group>"; };
+		D777C3E817C749D8009A9437 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
+		D7C4275517CB27CF00A99E01 /* AppWarp_iOS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppWarp_iOS_SDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,8 +504,8 @@
 				D76018DD16F81F4B0073587B /* Foundation.framework in Frameworks */,
 				D76018DF16F81F4B0073587B /* CoreGraphics.framework in Frameworks */,
 				D76018E116F81F4B0073587B /* GameKit.framework in Frameworks */,
-				D7601A7F16F820EF0073587B /* Shephertz_App42_iOS_API.framework in Frameworks */,
-				D7601A8116F821150073587B /* AppWarp_iOS_SDK.framework in Frameworks */,
+				D777C3E917C749D8009A9437 /* Shephertz_App42_iOS_API.framework in Frameworks */,
+				D7C4275617CB27CF00A99E01 /* AppWarp_iOS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,8 +532,8 @@
 		D76018CF16F81F4B0073587B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7601A8016F821150073587B /* AppWarp_iOS_SDK.framework */,
-				D7601A7E16F820EF0073587B /* Shephertz_App42_iOS_API.framework */,
+				D7C4275517CB27CF00A99E01 /* AppWarp_iOS_SDK.framework */,
+				D777C3E817C749D8009A9437 /* Shephertz_App42_iOS_API.framework */,
 				D76018D016F81F4B0073587B /* QuartzCore.framework */,
 				D76018D216F81F4B0073587B /* OpenGLES.framework */,
 				D76018D416F81F4B0073587B /* OpenAL.framework */,
@@ -1042,14 +1042,14 @@
 		D7601ACD16F82C490073587B /* AppWarpHelper */ = {
 			isa = PBXGroup;
 			children = (
-				D7601ACE16F82C5C0073587B /* RoomListener.m */,
-				D7601ACF16F82C5C0073587B /* NotificationListener.m */,
-				D7601AD016F82C5C0073587B /* ConnectionListener.m */,
-				D7601AD116F82C5C0073587B /* AppWarpHelper.m */,
 				D7601AD216F82C5C0073587B /* AppWarpHelper.h */,
-				D7601AD316F82C5C0073587B /* ConnectionListener.h */,
-				D7601AD416F82C5C0073587B /* NotificationListener.h */,
+				D7601AD116F82C5C0073587B /* AppWarpHelper.m */,
 				D7601AD516F82C5C0073587B /* RoomListener.h */,
+				D7601ACE16F82C5C0073587B /* RoomListener.m */,
+				D7601AD416F82C5C0073587B /* NotificationListener.h */,
+				D7601ACF16F82C5C0073587B /* NotificationListener.m */,
+				D7601AD316F82C5C0073587B /* ConnectionListener.h */,
+				D7601AD016F82C5C0073587B /* ConnectionListener.m */,
 			);
 			name = AppWarpHelper;
 			sourceTree = "<group>";
@@ -1288,8 +1288,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
+				PROVISIONING_PROFILE = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1299,7 +1299,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Siddhartha Chandurkar (W83S5TWNR8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Siddhartha Chandurkar (W83S5TWNR8)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -1309,6 +1310,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1338,8 +1341,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DE0B41F1-51EA-4ED7-A187-62C1F6A3E40E";
+				PROVISIONING_PROFILE = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1348,6 +1351,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Siddhartha Chandurkar (W83S5TWNR8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Siddhartha Chandurkar (W83S5TWNR8)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1365,6 +1370,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

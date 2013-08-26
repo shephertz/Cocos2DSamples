@@ -10,7 +10,8 @@
 #import "App42ResponseBuilder.h"
 #import "User.h"
 
-@interface UserResponseBuilder : App42ResponseBuilder{
+@interface UserResponseBuilder : App42ResponseBuilder
+{
     
 }
 

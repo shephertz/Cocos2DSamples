@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "RecommenderResponseBuilder.h"
+#import "App42Service.h"
+
+
 @class Recommender;
 @class PreferenceData;
 /**
@@ -54,14 +57,14 @@
 extern NSString *const EUCLIDEAN_DISTANCE;
 extern NSString *const PEARSON_CORRELATION;
 
-@interface RecommenderService : NSObject{
-    
-    NSString *apiKey;
-    NSString *secretKey;
-    
+@interface RecommenderService : App42Service
+{
+
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Uploads peference file on the cloud. The preference file should be in CSV
  * format. This prefernce file has to be uploaded once which can be a batch

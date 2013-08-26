@@ -142,9 +142,7 @@
     {
         int randomIndex = arc4random()%idArray.count;
         NSDictionary *userInfoDict = [[dataManager getDictionaryFromJSON:[[idArray objectAtIndex:randomIndex] jsonDoc]] retain];
-        //NSLog(@"[[idArray objectAtIndex:randomIndex] docId]=%@",[[idArray objectAtIndex:randomIndex] docId]);
-        //NSLog(@"userInfoDict=%@",userInfoDict);
-        if ([[[userInfoDict objectForKey:RANDOM_STACK] objectForKey:@"uid"] isEqualToString:dataManager.player1])
+                if ([[[userInfoDict objectForKey:RANDOM_STACK] objectForKey:@"uid"] isEqualToString:dataManager.player1])
         {
             [self removeFindingOpponentView];
             // do nothing if the id of the requeting user and id in the stack is same.
@@ -174,7 +172,6 @@
         [[PWGameController sharedInstance].alertManager showTurnAlertWithAlertInfo:alertInfo];
         [dataManager performSelectorInBackground:@selector(addRequestToRandomStack) withObject:nil];
     }
-    
 }
 
 

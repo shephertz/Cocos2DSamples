@@ -11,7 +11,9 @@
 #import "AppWarpHelper.h"
 
 @interface ConnectionListener : NSObject<ConnectionRequestListener,ZoneRequestListener>
+{
 
+}
 @property (nonatomic,retain)id helper;
 
 

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "EmailResponseBuilder.h"
+#import "App42Service.h"
+
 @class Email;
 
 /**
@@ -24,14 +26,14 @@ extern NSString *const HTML_TEXT_MIME_TYPE;
  *
  * @see Email
  */
-@interface EmailService : NSObject{
-    
-    
-    NSString *apiKey;
-    NSString *secretKey;
+@interface EmailService : App42Service
+{
+        
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Sends the Email to the specified recipient with the provided detail
  *

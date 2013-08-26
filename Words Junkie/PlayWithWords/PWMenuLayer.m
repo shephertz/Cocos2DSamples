@@ -218,25 +218,20 @@
 
 -(void)playClicked:(id)sender
 {
-    
     [[SimpleAudioEngine sharedEngine] playEffect:MENU_ITEM_CLICKED];
 
     PWGameLogicLayer *gameLayer = [PWGameLogicLayer sharedInstance];
     PWDataManager *dataManager=[PWGameController sharedInstance].dataManager;
-    
     if (gameLayer.turnIndicator==kPlayerTwoTurn)
     {
         return;
     }
-    
     int skipChanceLeftForOpponent = [[[dataManager player2Dict] objectForKey:SKIPP_CHANCE_LEFT] intValue];
     if (!skipChanceLeftForOpponent)
     {
         [[dataManager player2Dict] setObject:[NSNumber numberWithInt:skipChanceLeftForOpponent+1] forKey:SKIPP_CHANCE_LEFT];
     }
-    
     CurrentGameMode gameMode = [gameLayer currentGameMode];
-    
     if (gameMode==kPlacementMode)
     {
         if (!gameLayer.selectedChar)
@@ -273,8 +268,6 @@
         BOOL isDictoinaryWord = [gameLayer isDictionaryWord:word];
         BOOL isLockedWord = [gameLayer isLockedWord:word];
         
-        
-        
         if (isDictoinaryWord && !isLockedWord)
         {//Valid Word
             dataManager.recentWord = word;
@@ -297,12 +290,9 @@
             NSDictionary *alertInfo = [NSDictionary dictionaryWithObjectsAndKeys:title,ALERT_TITLE,[NSString stringWithFormat:@"Play %@ for 0 points!",[word uppercaseString]],ALERT_MESSAGE,@"Cancel",ALERT_CANCEL_BUTTON_TEXT,@"OK",ALERT_OK_BUTTON_TEXT, nil];
             [PWGameController sharedInstance].alertManager.alertType = kInvalidWordAlert;
             [[PWGameController sharedInstance].alertManager showTwoButtonAlertWithInfo:alertInfo];
-
         }
-        
         [gameLayer resetSelectionParameters];
         [word release];
-    
     }
 }
 

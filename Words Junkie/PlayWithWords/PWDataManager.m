@@ -552,6 +552,10 @@
     }
 }
 
+#pragma mark-
+#pragma mark- ---Updating Sessions---
+#pragma mark-
+
 -(void)writeSessionToTheServer
 {
     NSAutoreleasePool *threadPool = [[NSAutoreleasePool alloc] init];
@@ -587,17 +591,14 @@
     ServiceAPI *servicAPI = [[ServiceAPI alloc] init];
     servicAPI.apiKey = APP42_APP_KEY;
     servicAPI.secretKey = APP42_SECRET_KEY;
-    
     StorageService *storageService = [servicAPI buildStorageService];
-    
     @try
     {
         Storage *storage = [storageService updateDocumentByDocId:DOC_NAME collectionName:COLLECTION_NAME docId:doc_Id newJsonDoc:[sessionInfo JSONRepresentation]];
         [storage release];
     }
     @catch (App42Exception *exception)
-    {
-        
+    {      
     }
     @finally
     {
@@ -605,6 +606,12 @@
         [servicAPI release];
     }
 }
+
+
+
+#pragma mark-
+#pragma mark- ---Fetching Data---
+#pragma mark-
 
 -(int)getGlobalSessionToken
 {
@@ -636,6 +643,7 @@
 }
 
 
+
 -(BOOL)readSessionFromTheServer
 {
     BOOL isSuccess = NO;
@@ -646,8 +654,8 @@
     StorageService *storageService = [servicAPI buildStorageService];
     
     @try
-    { 
-
+    {
+        
         Storage *storage = [storageService findDocumentById:DOC_NAME collectionName:COLLECTION_NAME docId:doc_Id];
         
         NSMutableDictionary *gamesInfoDict = (NSMutableDictionary *)[[self getDictionaryFromJSON:[[[storage jsonDocArray] objectAtIndex:0] jsonDoc]] retain];
@@ -660,7 +668,7 @@
             isSuccess = YES;
         }
         [gamesInfoDict release];
-         [storage release];
+        [storage release];
     }
     @catch (App42Exception *exception)
     {
@@ -675,15 +683,14 @@
     }
 }
 
+
 -(void)getAllGames
 {
     ServiceAPI *servicAPI = [[ServiceAPI alloc] init];
     servicAPI.apiKey = APP42_APP_KEY;
     servicAPI.secretKey = APP42_SECRET_KEY;
-    
     StorageService *storageService = [servicAPI buildStorageService];
     Storage *storage;
-    //567479505
     @try
     {
         PWFacebookHelper *fbHelper = [PWFacebookHelper sharedInstance];
@@ -694,72 +701,16 @@
             fbHelper.userId = [[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
             [self setPlayer1:[NSString stringWithFormat:@"%@",fbHelper.userId]];
         }
-
-        //NSLog(@"player1=%@",player1);
         Query *query1_1 = [QueryBuilder buildQueryWithKey:PLAYER1 value:player1 andOperator:APP42_OP_EQUALS];
         Query *query1_2 = [QueryBuilder buildQueryWithKey:PLAYER2 value:player1 andOperator:APP42_OP_EQUALS];
         Query *query1_3 = [QueryBuilder combineQuery:query1_1 withQuery:query1_2 usingOperator:APP42_OP_OR];
         storage = [storageService findDocumentsByQuery:query1_3 dbName:DOC_NAME collectionName:COLLECTION_NAME];
-        
-        //NSLog(@"[storage jsonDocArray]=%@",[[[storage jsonDocArray] objectAtIndex:0] jsonDoc]);
         self.gamesArray = [storage jsonDocArray];
-        //NSLog(@"self.gamesArray=%@",self.gamesArray);
-        //NSDictionary *gamesInfoDict = [self getDictionaryFromJSON:[[gamesArray objectAtIndex:0] jsonDoc]];
-        
-        //NSLog(@"docId=%@",[[self.gamesArray objectAtIndex:0] docId]);
-        
     }
     @catch (App42Exception *exception)
     {
         self.gamesArray=nil;
         NSLog(@"exception=%@",exception.reason);
-    }
-    @finally
-    {
-        [storageService release];
-        [servicAPI release];
-    }
-
-}
-
--(void)createNewGameSession
-{
-    myScore = 0;
-    opponentScore = 0;
-    self.player1Dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:myScore],MY_SCORE,[[PWFacebookHelper sharedInstance] userName],PLAYER_NAME,[NSNumber numberWithInt:kPlayerOneTurn],TURN,[NSNumber numberWithInt:1],SKIPP_CHANCE_LEFT, nil];
-    
-    
-    self.player2Dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:opponentScore],MY_SCORE,self.player2_name,PLAYER_NAME,[NSNumber numberWithInt:kPlayerTwoTurn],TURN,[NSNumber numberWithInt:1],SKIPP_CHANCE_LEFT, nil];
-    
-    sessionInfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%@",player1],PLAYER1,
-                   [NSString stringWithFormat:@"%@",player2],PLAYER2,
-                   [NSNumber numberWithInt:kPlacementMode],GAME_MODE,
-                   [NSNumber numberWithInt:kGameRunning],GAME_STATE,
-                   [NSNumber numberWithInt:kNormalMode],GAME_TYPE,
-                   NSStringFromCGSize(CGSizeMake(NUMBER_OF_ROWS, NUMBER_OF_COLUMNS)),GAME_BOARD_SIZE,
-                   player1Dict,[NSString stringWithFormat:@"%@",player1],
-                   player2Dict,[NSString stringWithFormat:@"%@",player2],
-                   nil];
-    
-    [self performSelectorInBackground:@selector(startNewGameSessionOntheServer) withObject:nil];
-}
-
--(void)startNewGameSessionOntheServer
-{
-    ServiceAPI *servicAPI = [[ServiceAPI alloc] init];
-    servicAPI.apiKey = APP42_APP_KEY;
-    servicAPI.secretKey = APP42_SECRET_KEY;
-    
-    StorageService *storageService = [servicAPI buildStorageService];
-    
-    @try
-    {
-        Storage *storage = [storageService insertJSONDocument:DOC_NAME collectionName:COLLECTION_NAME json:[sessionInfo JSONRepresentation]];
-        self.doc_Id = [[[storage jsonDocArray] objectAtIndex:0] docId];
-    }
-    @catch (App42Exception *exception)
-    {
-        
     }
     @finally
     {
@@ -795,6 +746,54 @@
         return idArray;
     }
 }
+
+
+#pragma mark-
+#pragma mark- ---Creating New Session---
+#pragma mark-
+
+-(void)createNewGameSession
+{
+    myScore = 0;
+    opponentScore = 0;
+    self.player1Dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:myScore],MY_SCORE,[[PWFacebookHelper sharedInstance] userName],PLAYER_NAME,[NSNumber numberWithInt:kPlayerOneTurn],TURN,[NSNumber numberWithInt:1],SKIPP_CHANCE_LEFT, nil];
+    
+    
+    self.player2Dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:opponentScore],MY_SCORE,self.player2_name,PLAYER_NAME,[NSNumber numberWithInt:kPlayerTwoTurn],TURN,[NSNumber numberWithInt:1],SKIPP_CHANCE_LEFT, nil];
+    
+    sessionInfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%@",player1],PLAYER1,
+                   [NSString stringWithFormat:@"%@",player2],PLAYER2,
+                   [NSNumber numberWithInt:kPlacementMode],GAME_MODE,
+                   [NSNumber numberWithInt:kGameRunning],GAME_STATE,
+                   [NSNumber numberWithInt:kNormalMode],GAME_TYPE,
+                   NSStringFromCGSize(CGSizeMake(NUMBER_OF_ROWS, NUMBER_OF_COLUMNS)),GAME_BOARD_SIZE,
+                   player1Dict,[NSString stringWithFormat:@"%@",player1],
+                   player2Dict,[NSString stringWithFormat:@"%@",player2],
+                   nil];
+    
+    [self performSelectorInBackground:@selector(startNewGameSessionOntheServer) withObject:nil];
+}
+
+-(void)startNewGameSessionOntheServer
+{
+    ServiceAPI *servicAPI = [[ServiceAPI alloc] init];
+    servicAPI.apiKey = APP42_APP_KEY;
+    servicAPI.secretKey = APP42_SECRET_KEY;
+    StorageService *storageService = [servicAPI buildStorageService];
+    @try
+    {
+        Storage *storage = [storageService insertJSONDocument:DOC_NAME collectionName:COLLECTION_NAME json:[sessionInfo JSONRepresentation]];
+        self.doc_Id = [[[storage jsonDocArray] objectAtIndex:0] docId];
+    }
+    @catch (App42Exception *exception)
+    { }
+    @finally
+    {
+        [storageService release];
+        [servicAPI release];
+    }
+}
+
 
 -(void)removeDocWithRequestId:(NSString*)requestId
 {
@@ -926,16 +925,12 @@
     NSMutableArray *scoreList =nil;
     @try
     {
-        
         Game *game=[scoreboardService getTopNRankers:GAME_NAME max:MAX_NUMBER_OF_RECORDS_DISPLAYED_IN_LB];
         scoreList = game.scoreList;
-        
     }
     
     @catch (App42Exception *exception)
-    {
-        
-    }
+    {    }
     @finally
     {
         [scoreboardService release];
@@ -985,13 +980,9 @@
         NSLog(@"arr=%@",arr);
         Game *game=[scoreboardService getTopRankersByGroup:GAME_NAME group:arr];
         scoreList = game.scoreList;
-        
     }
-    
     @catch (App42Exception *exception)
-    {
-        
-    }
+    {    }
     @finally
     {
         [scoreboardService release];
@@ -1029,8 +1020,6 @@
 
 -(void)registerUserForPushNotificationToApp42Cloud
 {
-    
-    
     if (!self.deviceToken)
     {
         return;
@@ -1066,7 +1055,6 @@
     score *=score;
     @try
     {
-        //[NSString stringWithFormat:@"Hello there! %@ made %@ for %d points. Now it's your turn.",player2_name,word,word.length]//
         NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
         NSString *message;
         if ([[[PWGameController sharedInstance] alertManager] alertType]==kValidWordAlert)
@@ -1108,7 +1096,6 @@
         [dictionary setObject:@"default" forKey:@"sound"];
         [dictionary setObject:@"1" forKey:@"badge"];
         
-        //NSMutableDictionary *dictionary_final = [NSMutableDictionary dictionaryWithObjectsAndKeys:dictionary,@"aps", nil];
         PushNotification *pushNotification = [pushObj sendPushMessageToUser:player2 withMessageDictionary:dictionary];
         [pushNotification release];
         NSLog(@"player2=%@",player2);

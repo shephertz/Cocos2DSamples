@@ -36,6 +36,6 @@
  * @return List of Reward object filled with json data
  *
  */
--(NSArray*)buildArrayResponse:(NSString*)Json;
+-(NSMutableArray*)buildArrayResponse:(NSString*)Json;
 
 @end

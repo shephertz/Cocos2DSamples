@@ -51,6 +51,10 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    if ([[CCDirector sharedDirector] isPaused])
+    {
+        return NO;
+    }
 	//NSLog(@"%s",__FUNCTION__);
 	if(!isEnemy && [self containsTouchLocation:touch])
 	{

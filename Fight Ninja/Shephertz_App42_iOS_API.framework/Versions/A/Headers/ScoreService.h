@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "GameResponseBuilder.h"
+#import "App42Service.h"
+
 @class Game;
 /**
  * Allows game scoring. It has to be used for scoring for a particular Game
@@ -28,13 +30,14 @@
  * @see Game, RewardPoint, RewardPoint, ScoreBoard
  *
  */
-@interface ScoreService : NSObject{
+@interface ScoreService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Adds game score for the specified user.
  *
@@ -63,7 +66,6 @@
  *
  */
 -(Game*)deductScore:(NSString*)gameName gameUserName:(NSString*)gameUserName gameScore:(double)gameScore;
-
 
 
 @end

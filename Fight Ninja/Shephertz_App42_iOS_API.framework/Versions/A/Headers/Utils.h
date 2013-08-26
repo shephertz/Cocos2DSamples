@@ -11,14 +11,18 @@
 @interface Utils : NSObject{    
     NSString *appErrorCode;
 }
-+(NSString*)sign:(NSMutableDictionary *)data:(NSString*)secretKey;
++(NSString*)createSignatureFromDataDict:(NSMutableDictionary *)data andSecretKey:(NSString*)secretKey;
 +(NSString*)getUTCTimeFormattedStamp;
 +(NSString*)getUTCTimeFormattedStamp:(NSDate*)date;
-+(NSString*)multipartRequest:(NSString*)name:(NSString*)filePath:(NSMutableDictionary*)queryParams:(NSMutableDictionary*)postParams:(NSString*)postUrl;
-+(NSString*)multipartRequest:(NSString*)name:(NSData*)fileData:(NSString*)fileName:(NSMutableDictionary*)queryParams:(NSMutableDictionary*)postParams:(NSString*)postUrl;
-+(void)throwExceptionIfNullOrBlank:(id)Obj:(NSString*)name;
++(NSString*)multipartRequestWithRequestName:(NSString*)name forFileWithPath:(NSString*)filePath queryParams:(NSMutableDictionary*)queryParams postParams:(NSMutableDictionary*)postParams headerParams:(NSMutableDictionary*)headerParams postUrl:(NSString*)postUrl;
++(NSString*)multipartRequestWithRequestName:(NSString*)name forFileData:(NSData*)fileData fileName:(NSString*)fileName queryParams:(NSMutableDictionary*)queryParams postParams:(NSMutableDictionary*)postParams headerParams:(NSMutableDictionary*)headerParams postUrl:(NSString*)postUrl;
+
+
++(NSString*)multipartRequestWithRequestName:(NSString*)name forFileWithPath:(NSString*)filePath queryParams:(NSMutableDictionary*)queryParams postParams:(NSMutableDictionary*)postParams postUrl:(NSString*)postUrl;
++(NSString*)multipartRequestWithRequestName:(NSString*)name forFileData:(NSData*)fileData fileName:(NSString*)fileName queryParams:(NSMutableDictionary*)queryParams postParams:(NSMutableDictionary*)postParams postUrl:(NSString*)postUrl;
++(void)throwExceptionIfNullOrBlank:(id)Obj :(NSString*)name;
 +(void)validateMax:(int)max;
-+(void)throwExceptionIfEmailNotValid:(id)obj:(NSString*)name;
++(void)throwExceptionIfEmailNotValid:(id)obj :(NSString*)name;
 +(void)throwExceptionIfNotValidExtension:(NSString*)fileName name:(NSString*)name;
 +(void)throwExceptionIfNotValidImageExtension:(NSString*)fileName name:(NSString*)name;
 +(void)validateHowMany:(int)howMany;

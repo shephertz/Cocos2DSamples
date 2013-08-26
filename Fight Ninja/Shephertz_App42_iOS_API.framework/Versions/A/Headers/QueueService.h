@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "QueueResponseBuilder.h"
+#import "App42Service.h"
+
 @class Queue;
 @class App42Response;
 /**
@@ -17,13 +19,13 @@
  * @see Queue
  *
  */
-@interface QueueService : NSObject{
-    
-    NSString *apiKey;
-    NSString *secretKey;
+@interface QueueService : App42Service
+{
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Creates a type Pull Queue
  *

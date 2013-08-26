@@ -14,7 +14,8 @@
  * 
  */
 
-@interface ServiceAPI : NSObject{
+@interface ServiceAPI : NSObject
+{
     
     NSString *apiKey;
     
@@ -126,8 +127,11 @@
  */
 -(id)buildPushService;
 /*!
- *@return Returns the instance of Push API
+ *@return Returns the instance of Social API
  */
 -(id)buildSocialService;
-
+/*!
+ *@return Returns the instance of Buddy API
+ */
+-(id)buildBuddyService;
 @end

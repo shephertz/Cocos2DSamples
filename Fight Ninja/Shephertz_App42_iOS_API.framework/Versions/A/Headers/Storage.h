@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class JSONDocument;
+
 #import "App42Response.h"
 
 /**
@@ -17,8 +17,9 @@
  *
  */
 
-
-@interface Storage : App42Response{
+@class JSONDocument;
+@interface Storage : App42Response
+{
     NSString *dbName;
     NSString *collectionName;
     NSMutableArray *jsonDocArray;

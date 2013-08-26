@@ -16,7 +16,8 @@
  *
  */
 
-@interface Game : App42Response{
+@interface Game : App42Response
+{
     
     NSString *name;
     NSString *description;

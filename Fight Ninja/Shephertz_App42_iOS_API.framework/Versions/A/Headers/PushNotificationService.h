@@ -24,15 +24,21 @@
  *
  */
 
+#import "App42Service.h"
+
 extern NSString *const PRODUCTION;
 extern NSString *const DEVELOPMENT;
 
-@interface PushNotificationService : NSObject{
-    NSString *apiKey;
-    NSString *secretKey;
+
+@interface PushNotificationService : App42Service
+{
+    
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+
+-(id) init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 
 /**Upload certificate file to server
  * 
@@ -49,7 +55,9 @@ extern NSString *const DEVELOPMENT;
  * @param deviceToken device id for android phones
  * @return PushNotification Object
  */
-- (PushNotification*)storeDeviceToken:(NSString *)userName:(NSString *)deviceToken;
+//- (PushNotification*)storeDeviceToken:(NSString *)userName:(NSString *)deviceToken;
+
+- (PushNotification*)registerDeviceToken:(NSString *)deviceToken withUser:(NSString *)userName;
 
 /** Create Channel for app on which user can subscribe and get the notification for that 
  * channel
@@ -63,9 +71,11 @@ extern NSString *const DEVELOPMENT;
  * Subscribe to the channel
  * @param channel the channel name which you want to subscribe
  * @param userName username which want to subscribe
+ * @param deviceToken deviceToken for which you want to subscribe
+ * @param deviceType deviceType for which you want to subscribe
  * @return PushNotification Object
  */
-- (PushNotification*)subscribeToChannel:(NSString *)channel userName:(NSString *)userName;
+- (PushNotification*)subscribeToChannel:(NSString *)channel userName:(NSString *)userName deviceToken:(NSString*)deviceToken deviceType:(NSString*)deviceType;
 
 /**Unsubscribe from particular channel
  * 
@@ -73,7 +83,7 @@ extern NSString *const DEVELOPMENT;
  * @param userName username which want to unsubscribe
  * @return PushNotification Object
  */
-- (PushNotification*)unsubscribeFromChannel:(NSString *)channel userName:(NSString *)userName;
+- (PushNotification*)unsubscribeFromChannel:(NSString *)channel userName:(NSString *)userName deviceToken:(NSString*)deviceToken;
 
 /** send push message to channel containing string
  * 

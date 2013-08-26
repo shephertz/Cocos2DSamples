@@ -17,7 +17,8 @@
  */
 
 
-@interface Queue :App42Response{
+@interface Queue :App42Response
+{
     NSString *queueType;
     NSString *queueName;
     NSString *description;

@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PlayWithWords/PWGameLogicLayer.m"
-         timestampString = "392900111.770292"
+         timestampString = "397993286.716654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1605"
-         endingLineNumber = "1605"
-         landmarkName = "-continueWithThisValidWord"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PlayWithWords/PWDataManager.m"
-         timestampString = "392876250.343417"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "627"
-         endingLineNumber = "627"
-         landmarkName = "-getGlobalSessionToken"
+         startingLineNumber = "1604"
+         endingLineNumber = "1604"
+         landmarkName = "-continueWithThisInvalidWord"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -53,32 +40,6 @@
          startingLineNumber = "113"
          endingLineNumber = "113"
          landmarkName = "-createHudLayoutForIPhone"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PlayWithWords/PWDataManager.m"
-         timestampString = "392876250.343417"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "597"
-         endingLineNumber = "597"
-         landmarkName = "-updateGameSessionOnSever"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PlayWithWords/PWNewGameViewController.m"
-         timestampString = "392723114.463744"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
-         landmarkName = "-checkForRandomPlayer"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -112,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PlayWithWords/PWGameLogicLayer.m"
-         timestampString = "392900111.770292"
+         timestampString = "397993286.716654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2013"
-         endingLineNumber = "2013"
+         startingLineNumber = "2012"
+         endingLineNumber = "2012"
          landmarkName = "-layerPanZoom:clickedAtPoint:tapCount:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,38 +99,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PlayWithWords/PWGameLogicLayer.m"
-         timestampString = "392900111.770292"
+         timestampString = "397993286.716654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1130"
-         endingLineNumber = "1130"
+         startingLineNumber = "1129"
+         endingLineNumber = "1129"
          landmarkName = "-refresh"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PlayWithWords/PWDataManager.m"
-         timestampString = "397391060.591195"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "922"
-         endingLineNumber = "922"
-         landmarkName = "-getScores"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PlayWithWords/PWDataManager.m"
-         timestampString = "397391067.47323"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "977"
-         endingLineNumber = "977"
-         landmarkName = "-getFriendsScores"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

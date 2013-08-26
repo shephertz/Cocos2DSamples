@@ -18,6 +18,19 @@
     return self;
 }
 
+-(void)onLockPropertiesDone:(Byte)result
+{
+    
+}
+-(void)onUnlockPropertiesDone:(Byte)result
+{
+    
+}
+-(void)onUpdatePropertyDone:(LiveRoomInfoEvent *)event
+{
+    
+}
+
 -(void)onSubscribeRoomDone:(RoomEvent*)roomEvent{
     
     if (roomEvent.result == SUCCESS)
@@ -48,6 +61,7 @@
     if (roomEvent.result == SUCCESS)
     {
         RoomData *roomData = roomEvent.roomData;
+        [[AppWarpHelper sharedAppWarpHelper] setRoomId:roomData.roomId];
         [[WarpClient getInstance]subscribeRoom:roomData.roomId];
         [[AppWarpHelper sharedAppWarpHelper] getAllUsers];
         NSLog(@".onJoinRoomDone..on Join room listener called Success");
@@ -55,6 +69,7 @@
     else
     {
         NSLog(@".onJoinRoomDone..on Join room listener called failed");
+        [[WarpClient getInstance] createRoomWithRoomName:@"MyGameRoom" roomOwner:[[AppWarpHelper sharedAppWarpHelper] userName] properties:nil maxUsers:2];
     }
     
 }

@@ -16,18 +16,24 @@
  */
 
 
-@interface User : App42Response{
+@interface User : App42Response
+{
     NSString *userName;
     NSString *email;
     NSString *password;
-    NSArray *roleList;
-    Profile *profile;
+    NSArray  *roleList;
+    NSString *sessionId;
+    Profile  *profile;
     BOOL isAccountLocked;
 }
 /*!
  *set and get the name of the User.
  */
 @property(nonatomic,retain)NSString *userName;
+/*!
+ *set and get the sessionId of the User's session.
+ */
+@property(nonatomic,retain)NSString *sessionId;
 /*!
  *set and get the email of the User.
  */

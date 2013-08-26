@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "StorageResponseBuilder.h"
 #import "App42Response.h"
+#import "App42Service.h"
+
 @class Storage;
+@class Query;
+@class GeoQuery;
 /**
  * Storage service on cloud provides the way to store the JSON document in NoSQL
  * database running on cloud. One can store the JSON document, update it ,
@@ -23,13 +27,16 @@
  * @see App42Response
  *
  */
-@interface StorageService : NSObject{
+@interface StorageService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
+    
+    
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
 /**
  * Save the JSON document in given database name and collection name.
  *
@@ -89,6 +96,23 @@
  *
  */
 -(Storage*)findAllDocuments:(NSString*)dbName collectionName:(NSString*)collectionName max:(int)max offset:(int)offset;
+
+
+/**
+ * Find all collections stored in given database.
+ *
+ * @param dbName
+ *            - Unique handler for storage name
+ *
+ * @return Storage object
+ *
+ * @throws App42Exception
+ *
+ */
+
+-(Storage*)findAllCollections:(NSString*)dbName;
+
+
 /**
  * Find target document by given unique object id.
  *
@@ -217,4 +241,104 @@
  */
 -(NSString*)mapReduce:(NSString*)dbName collectionName:(NSString*)collectionName mapFunction:(NSString*)mapFunction reduceFunction:(NSString*)reduceFunction;
 
+
+/**
+ * Find target document using Custom Query.
+ *
+ * @param Query
+ *            - Query Object containing custom query for searching docs
+ * @param dbName
+ *            - Unique handler for storage name
+ * @param collectionName
+ *            - Name of collection under which JSON doc needs to be searched
+ * @return Storage object
+ *
+ * @throws App42Exception
+ *
+ */
+
+-(Storage*)findDocumentsByQuery:(Query*)query dbName:(NSString*)dbName collectionName:(NSString*)collectionName;
+
+/**
+ * Find target document using Custom Query with paging.
+ *
+ * @param dbName
+ *            - Unique handler for storage name
+ * @param collectionName
+ *            - Name of collection under which JSON doc needs to be searched
+ * @param Query
+ *            - Query Object containing custom query for searching docs
+ * @param max
+ *            - Maximum number of records to be fetched
+ * @param offset
+ *            - From where the records are to be fetched
+ *
+ * @return Storage object
+ *
+ * @throws App42Exception
+ *
+ */
+-(Storage*)findDocumentsByQueryWithPaging:(NSString*)dbName collectionName:(NSString*)collectionName query:(Query*)query max:(int)max offset:(int)offset;
+
+
+/**
+ * Find target document using Custom Query with paging and orderby.
+ *
+ * @param dbName
+ *            - Unique handler for storage name
+ * @param collectionName
+ *            - Name of collection under which JSON doc needs to be searched
+ * @param Query
+ *            - Query Object containing custom query for searching docs
+ * @param max
+ *            - max result parameter
+ * @param offset
+ *            - offset result parameter
+ * @param orderByKey
+ *            - Name of Key on which order by has to be applied
+ * @param type
+ *            - ASCENDING/DESCENDING mode
+ * @return
+ * @throws App42Exception
+ */
+-(Storage*) findDocsWithQueryPagingOrderBy:(NSString*)dbName
+                            collectionName:(NSString*)collectionName
+                                     query:(Query*)query
+                                       max:(int)max
+                                    offset:(int)offset
+                                orderByKey:(NSString*)orderByKey
+                               orderByType:(NSString*)orderType;
+
+-(Storage*)grantAccessOnDoc:(NSString*)dbName
+             collectionName:(NSString*)collectionName
+                      docId:(NSString*) docId
+                 andAclList:(NSArray*) aclList;
+
+-(Storage*)revokeAccessOnDoc:(NSString*)dbName
+              collectionName:(NSString*)collectionName
+                       docId:(NSString*) docId
+                  andAclList:(NSArray*) aclList;
+
+-(App42Response*) deleteAllDocuments:(NSString*)dbName collectionName:(NSString*) collectionName;
+-(Storage*)findDocumentsByLocation:(NSString*)dbName collectionName:(NSString*)collectionName geoQuery:(GeoQuery*)query;
+/**
+ * Delete target document using key and value from given db and collection.
+ * The key value will be searched in the JSON doc stored on the cloud and
+ * matching value will be deleted.
+ *
+ * @param dbName
+ *            - Unique handler for storage name
+ * @param collectionName
+ *            - Name of collection under which JSON doc needs to be searched
+ * @param key
+ *            - Unique key handler
+ * @param value
+ *            - Unique value handler
+ *
+ * @return App42Response object if deleted successfully
+ *
+ * @throws App42Exception
+ *
+ */
+-(App42Response*)deleteDocumentsByKeyValue:(NSString*)dbName collectionName:(NSString*)collectionName key:(NSString*)key value:(NSString*)value;
 @end

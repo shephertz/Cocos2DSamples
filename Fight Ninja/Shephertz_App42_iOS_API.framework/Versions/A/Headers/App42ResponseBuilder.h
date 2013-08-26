@@ -15,7 +15,7 @@
 
 
 -(void)buildJSONObjectFromJSONDictionary:(NSDictionary *)jsonTree object:(id)Obj;
--(NSDictionary*)getServiceJsonDictionary:(NSString *)serviceName:(NSString *)json;
+-(NSDictionary*)getServiceJsonDictionary:(NSString *)serviceName :(NSString *)json;
 -(BOOL)isResponseSuccess:(NSString*)json;
 -(int)totalRecords:(NSString*)json;
 @end

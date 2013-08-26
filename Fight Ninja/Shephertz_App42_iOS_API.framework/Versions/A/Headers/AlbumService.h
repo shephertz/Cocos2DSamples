@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AlbumResponseBuilder.h"
+#import "App42Service.h"
+
 @class Album;
 @class App42Response;
 
@@ -23,13 +25,13 @@
  * @see Album
  * @see Photo
  */
-@interface AlbumService : NSObject{
+@interface AlbumService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
 
 /**
  * Creates Album on the cloud

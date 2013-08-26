@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UploadResponseBuilder.h"
 #import "Upload.h"
+#import "App42Service.h"
 /**
  * Uploads file on the cloud. Allows access to the files through url. Its
  * especially useful for mobile/device apps. It minimizes the App footprint on
@@ -35,13 +36,16 @@ extern NSString *const OTHER;
  }FileType;*/
 
 
-@interface UploadService : NSObject{
+@interface UploadService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *secretKey;
+
+
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
+
 /**
  * Uploads file on the cloud.
  *
@@ -278,5 +282,115 @@ extern NSString *const OTHER;
  *
  */
 -(Upload*)getFilesByType:(NSString*)uploadFileType max:(int)max offset:(int)offset;
+
+/**
+ * Grant access of files based on aclList.
+ *
+ * @param userName
+ *            - userName who grants the access
+ * @param aclList
+ *            - List of the Acl objects which holds the userNames and permission types
+ *
+ * @return App42Response object
+ *
+ */
+
+-(App42Response*)grantAccessOnFile:(NSString*)fileName
+                            ofUser:(NSString*)userName
+                       withAclList:(NSArray*) aclList;
+
+/**
+ * Revoke access of files based on aclList.
+ *
+ * @param userName
+ *            - userName who revokes the access
+ * @param aclList
+ *            - List of the Acl objects which holds the userNames and permission types
+ *
+ * @return App42Response object
+ *
+ */
+-(App42Response*)revokeAccessOnFile:(NSString*)fileName
+                             ofUser:(NSString*)userName
+                        withAclList:(NSArray*) aclList;
+
+/**
+ *
+ * @param name
+ *            - The name of the file which has to be saved. It is used to
+ *            retrieve the file.
+ * @param userName
+ *            - Name of the user who is uploading the file
+ * @param ownerName
+ *            - Name of owner of the group
+ * @param groupName
+ *            - Name of the group in which file has to upload
+ * @param filePath
+ *            - The local path for the file
+ * @param fileType
+ *            - Type of the file e.g. Upload.AUDIO, Upload.XML etc.
+ * @param description
+ *            - Description of the file to be uploaded.
+ * @return Upload object
+ * @throws App42Exception
+ */
+-(Upload*)uploadFileForGroup:(NSString*)fileName
+                    userName:(NSString*) userName
+                   ownerName:(NSString*) ownerName
+                   groupName:(NSString*) groupName
+                    filePath:(NSString*) filePath
+                    fileType:(NSString*) fileType
+                 description:(NSString*) description;
+
+/**
+ *
+ * @param name
+ *            - The name of the file which has to be saved. It is used to
+ *            retrieve the file.
+ * @param userName
+ *            - Name of the user who is uploading the file
+ * @param buddyName
+ *            - Name of the buddy for which file has to upload
+ * @param filePath
+ * @param fileType
+ * @param filePath
+ *            - The local path for the file
+ * @param fileType
+ *            - Type of the file e.g. Upload.AUDIO, Upload.XML etc.
+ * @param description
+ *            - Description of the file to be uploaded.
+ * @return Upload object
+ * @throws App42Exception
+ */
+
+-(Upload*)uploadFileForFriend:(NSString*)fileName
+                     userName:(NSString*) userName
+                    buddyName:(NSString*) buddyName
+                     filePath:(NSString*) filePath
+                     fileType:(NSString*) fileType
+                  description:(NSString*) description;
+
+/**
+ *
+ * @param name
+ *            - The name of the file which has to be saved. It is used to
+ *            retrieve the file.
+ * @param userName
+ *            - Name of the user who is uploading the file
+ * @param filePath
+ *            - The local path for the file
+ * @param fileType
+ *            - Type of the file e.g. Upload.AUDIO, Upload.XML etc.
+ * @param description
+ *            - Description of the file to be uploaded.
+ * @return Upload object
+ * @throws App42Exception
+ */
+
+-(Upload*)uploadFileForFriends:(NSString*)fileName
+                      userName:(NSString*) userName
+                      filePath:(NSString*) filePath
+                      fileType:(NSString*) fileType
+                   description:(NSString*) description;
 
 @end

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SessionResponseBuilder.h"
 #import "Session.h"
+#import "App42Service.h"
+
 /**
  * The Session Manager manages user sessions on the server side. It is a
  * persistent Session Manager. It allows to save attributes in the session and
@@ -18,14 +20,15 @@
  * @see Session
  *
  */
-@interface SessionService : NSObject{
+@interface SessionService : App42Service
+{
     
-    NSString *apiKey;
-    NSString *secretKey;
 }
 
-@property(nonatomic,retain)NSString *apiKey;
-@property(nonatomic,retain)NSString *secretKey;
+-(id)init __attribute__((unavailable));
+-(id)initWithAPIKey:(NSString *)apiKey  secretKey:(NSString *)secretKey;
+
+
 /**
  * Create Session for the User. If the session does not exist it will create
  * a new session

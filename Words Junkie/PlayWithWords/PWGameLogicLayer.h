@@ -83,9 +83,9 @@
 -(void)refreshGame:(ccTime)delta;
 
 
--(void)createWordBoardWithRows;
+-(void)createWordBoard;
 -(void)getSelectedCharFromCharacterMenuWithLetter:(NSString*)letter withPositionINdex:(int)pos_index;
--(void)createCharacterMenu;
+-(void)createCharacterMenuForIPhone;
 -(void)showMenuScreen:(BOOL)isShow withAnimation:(BOOL)isAnimate;
 -(CGPoint)getIndexForThePosition:(CGPoint)point;
 -(CGPoint)getCorrectCharPositionForTheIndex:(CGPoint)index;
@@ -97,7 +97,7 @@
 -(NSString*)constructWordFromTheSelectedNodes;
 -(void)drawSelectedNodes:(CGPoint)spoint;
 -(void)resetSelectionParameters;
--(void)resizeTheCharacterWithMapCell;
+-(void)resizeTheCharacterToTileSize;
 
 -(BOOL) isDictionaryWord:(NSString*) word;
 -(BOOL)isLockedWord:(NSString*) word;

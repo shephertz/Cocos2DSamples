@@ -10,5 +10,5 @@
 #import "App42Exception.h"
 
 @interface App42BadParameterException : App42Exception
--(id)initWithreason:(NSString *)aReason userInfo:(NSDictionary *)aUserInfo:(int)httpCode:(int)appCode;
+-(id)initWithreason:(NSString *)aReason userInfo:(NSDictionary *)aUserInfo :(int)httpCode :(int)appCode;
 @end
