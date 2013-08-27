@@ -6,8 +6,8 @@
  *  Copyright 2013 shephertz technologies. All rights reserved.
  *****************************************************************/
 
-#define     APP42_APP_KEY           @"20f4bef55024ea12ac3c3ed19d7ea629b3acbbc72f72b1e958b61be521afd26c"
-#define     APP42_SECRET_KEY        @"d134612494e7d6d1cfdd0a5e0cbdcb76ed9abecb4e81ce6b6da4c34e79af145b"
+#define     APP42_APP_KEY           @"app_key"
+#define     APP42_SECRET_KEY        @"secret_key"
 
 #define     GAME_NAME               @"Words Junkie5"
 #define     MAX_NUMBER_OF_RECORDS_DISPLAYED_IN_LB 20
