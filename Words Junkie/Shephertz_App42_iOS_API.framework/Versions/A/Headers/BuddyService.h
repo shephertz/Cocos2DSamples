@@ -265,4 +265,29 @@
  */
 -(NSArray*)getAllMessages:(NSString*) userName;
 
+/**
+ *
+ * @param userName
+ *            - Name of the user who want to fetch the message from buddy
+ * @param buddyName
+ *            - Name of Buddy for which message has to fetch.
+ * @return Buddy object
+ * @throws App42Exception
+ */
+-(NSArray*)getAllMessagesFromBuddy:(NSString*)buddyName toUser:(NSString*)userName;
+
+/**
+ *
+ * @param userName
+ *            - Name of the user who want to fetch the message from the
+ *            group
+ * @param groupOwner
+ *            - Name of owner of the group
+ * @param groupName
+ *            - Name of the group from which message has to fetch
+ * @return Buddy object
+ * @throws App42Exception
+ */
+-(NSArray*)getAllMessagesFromGroup:(NSString*)groupName ofGroupOwner:(NSString*)groupOwner toUser:(NSString*)userName;
+
 @end

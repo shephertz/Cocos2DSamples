@@ -14,10 +14,12 @@
  */
 
 
-@interface PushNotification : App42Response{
+@interface PushNotification : App42Response
+{
     
     NSMutableArray *channelList;
 }
+
 /*!
  *set and get the fileListArray for Upload Object where fileListArray contain the File Object
  */
@@ -26,6 +28,5 @@
 @property(nonatomic,retain)NSString *message;
 
 @property(nonatomic,retain)NSString *userName;
-
 
 @end

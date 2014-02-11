@@ -29,7 +29,7 @@
 extern NSString *const PRODUCTION;
 extern NSString *const DEVELOPMENT;
 
-
+@class Query;
 @interface PushNotificationService : App42Service
 {
     
@@ -69,6 +69,30 @@ extern NSString *const DEVELOPMENT;
 
 /**
  * Subscribe to the channel
+ *
+ * @param channel
+ *            the channel name which you want to subscribe
+ * @param userName
+ *            username which want to subscribe
+ * @return PushNotification Object
+ * @throws App42Exception
+ */
+- (PushNotification*)subscribeToChannel:(NSString *)channel userName:(NSString *)userName;
+
+/**
+ * Unsubscribe from particular channel
+ *
+ * @param channel
+ *            channel name which you want to unsubscribe
+ * @param userName
+ *            username which want to unsubscribe
+ * @return PushNotification Object
+ * @throws App42Exception
+ */
+- (PushNotification*)unsubscribeFromChannel:(NSString *)channel userName:(NSString *)userName;
+
+/**
+ * Subscribe to the channel
  * @param channel the channel name which you want to subscribe
  * @param userName username which want to subscribe
  * @param deviceToken deviceToken for which you want to subscribe
@@ -83,7 +107,7 @@ extern NSString *const DEVELOPMENT;
  * @param userName username which want to unsubscribe
  * @return PushNotification Object
  */
-- (PushNotification*)unsubscribeFromChannel:(NSString *)channel userName:(NSString *)userName deviceToken:(NSString*)deviceToken;
+- (PushNotification*)unsubscribeDeviceToChannel:(NSString *)channel userName:(NSString *)userName deviceToken:(NSString*)deviceToken;
 
 /** send push message to channel containing string
  * 
@@ -135,5 +159,18 @@ extern NSString *const DEVELOPMENT;
  * @return PushNotification Object
  */
 - (PushNotification *)sendPushMessageToUser:(NSString *)userName withMessageDictionary:(NSDictionary *)message;
+
+/**
+ * Send Push Message To target user using storage query.
+ * This method fetches userName from target dbName and collectionName using passed query and sends push notification to them.
+ *
+ * @param message - Message that you want to send
+ * @param dbName - dbName
+ * @param collectionName - collectionName
+ * @param query - query to fetch target users.
+ * @return PushNotification Object
+ * @throws App42Exception
+ */
+-(PushNotification*)sendPushToTargetUsers:(NSString*)message dbName:(NSString*)dbName collectionName:(NSString*)collectionName query:(Query*) query;
 
 @end

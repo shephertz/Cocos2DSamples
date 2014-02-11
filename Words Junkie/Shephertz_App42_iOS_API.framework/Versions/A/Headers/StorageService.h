@@ -341,4 +341,65 @@
  *
  */
 -(App42Response*)deleteDocumentsByKeyValue:(NSString*)dbName collectionName:(NSString*)collectionName key:(NSString*)key value:(NSString*)value;
+
+/**
+ * Update target document using key value search parameter. This key value
+ * pair will be searched in the JSON doc stored in the cloud and matching
+ * Doc will be updated with new value passed. If match document is not found it will insert the json
+ * doc with that key value
+ *
+ * @param dbName
+ *            - Unique handler for storage name
+ * @param collectionName
+ *            - Name of collection under which JSON doc needs to be searched
+ * @param key
+ *            - Key to be searched for target JSON doc
+ * @param value
+ *            - Value to be searched for target JSON doc
+ * @param newJsonDoc
+ *            - New Json document to be added
+ *
+ * @return Storage object
+ *
+ * @throws App42Exception
+ *
+ */
+
+-(Storage*) saveOrUpdateDocumentByKeyValue:(NSString*)dbName
+                            collectionName:(NSString*)collectionName
+                                       key:(NSString*)key
+                                     value:(NSString*)value
+                                newJsonDoc:(NSString*)newJsonDoc;
+
+/**
+ * Update target document using key value search parameter. This key value
+ * pair will be searched in the JSON doc stored in the cloud and matching
+ * Doc will be updated with new value passed. If match document is not found it will insert the json
+ * doc with that key value
+ *
+ * @param dbName
+ *            - Unique handler for storage name
+ * @param collectionName
+ *            - Name of collection under which JSON doc needs to be searched
+ * @param key
+ *            - Key to be searched for target JSON doc
+ * @param value
+ *            - Value to be searched for target JSON doc
+ * @param dataDict
+ *            - New JsonObject document to be added
+ *
+ * @return Storage object
+ *
+ * @throws App42Exception
+ *
+ */
+
+-(Storage*) saveOrUpdateDocumentByKeyValue:(NSString*)dbName
+                            collectionName:(NSString*)collectionName
+                                       key:(NSString*)key
+                                     value:(NSString*)value
+                                  dataDict:(NSDictionary*)dataDict;
+
+
+
 @end

@@ -78,7 +78,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "2012"
          endingLineNumber = "2012"
-         landmarkName = "-layerPanZoom:clickedAtPoint:tapCount:"
+         landmarkName = "-layerPanZoom:touchPositionUpdated:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

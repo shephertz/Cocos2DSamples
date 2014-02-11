@@ -23,4 +23,5 @@
  * @return NSDictionary
  */
 -(NSDictionary*) getGeoTag;
+-(NSString*)toString;
 @end

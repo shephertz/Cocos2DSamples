@@ -15,7 +15,8 @@
  *
  */
 
-@interface Points : App42Response{
+@interface Points : App42Response
+{
     double lat;
     double lng;
     NSString *marker;

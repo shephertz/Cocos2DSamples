@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class GeoTag;
 @interface App42Service : NSObject
 {
     

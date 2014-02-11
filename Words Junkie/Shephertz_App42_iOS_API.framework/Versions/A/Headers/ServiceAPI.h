@@ -19,17 +19,50 @@
     
     NSString *apiKey;
     
-    NSString *secretKey; 
+    NSString *secretKey;
+    NSString *baseURL;
+    
   
 }
 /*!
- *set the api key of application
+ * set the api key of application
  */
-@property(nonatomic,retain)NSString *apiKey;
+@property(nonatomic,retain) NSString *apiKey;
 /*!
- *set the secret key of application
+ * set the secret key of application
  */
-@property(nonatomic,retain)NSString *secretKey;
+@property(nonatomic,retain) NSString *secretKey;
+
+/*!
+ * Set the baseURL
+ */
+@property(nonatomic,retain) NSString *baseURL;
+
+/**
+ * Returns currently logged in user.
+ * @return loggedInUser
+ */
+-(NSString*) getLoggedInUser;
+
+/**
+ * Set current logged in user.
+ * @param loggedInUser
+ */
+-(void) setLoggedInUser:(NSString*) l_loggedInUser;
+
+
+/*!
+ * Set the cacheStoragePolicy
+ */
+-(void)setCacheStoragePolicy:(NSURLRequestCachePolicy)cachePolicy;
+
+/*!
+ *Get the cacheStoragePolicy
+ */
+-(NSURLRequestCachePolicy)getCacheStoragePolicy;
+
+-(void)enableApp42Trace:(BOOL)isEnable;
+
 /*!
  *set the accept Type for connection whether it is json or xml. 
  */
@@ -134,4 +167,22 @@
  *@return Returns the instance of Buddy API
  */
 -(id)buildBuddyService;
+/*!
+ *@return Returns the instance of ABTest API
+ */
+-(id)buildABTestService;
+/*!
+ *@return Returns the instance of CustomCode API
+ */
+-(id)buildCustomCodeService;
+/*!
+ *@return Returns the instance of AvatarService API
+ */
+-(id)buildAvatarService;
+
+/*!
+ *@return Returns the instance of AchievementService API
+ */
+-(id)buildAchievementService;
+
 @end

@@ -17,7 +17,8 @@
  */
 
 
-@interface Geo : App42Response{
+@interface Geo : App42Response
+{
     
     NSString *storageName;
     NSString *sourceLat;

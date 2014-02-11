@@ -10,8 +10,9 @@
 
 @interface App42API : NSObject
 {
-    
+
 }
+
 +(NSArray*) getDefaultACL;
 +(void) setDefaultACL:(NSArray*)l_defaultACL;
 +(NSString*) getLoggedInUser;
@@ -24,6 +25,14 @@
 +(void) setInstallId:(NSString*)l_installId;
 +(NSString*) getInstallId;
 +(void)removeSession;
+
++(void)setBaseUrl:(NSString*)baseUrl;
+
++(void)setCacheStoragePolicy:(NSURLRequestCachePolicy)cachePolicy;
++(NSURLRequestCachePolicy)getCacheStoragePolicy;
+
++(void)enableApp42Trace:(BOOL)isEnable;
++(void)enableCrashEventHandler:(BOOL)isEnable;
 
 
 /*!
@@ -126,5 +135,25 @@
  *@return Returns the instance of Buddy API
  */
 +(id)buildBuddyService;
+
+/*!
+ *@return Returns the instance of ABTestService API
+ */
++(id)buildABTestService;
+
+/*!
+ *@return Returns the instance of AvatarService API
+ */
++(id)buildAvatarService;
+
+/*!
+ *@return Returns the instance of CustomCode API
+ */
++(id)buildCustomCodeService;
+
+/*!
+ *@return Returns the instance of AchievementService API
+ */
++(id)buildAchievementService;
 
 @end

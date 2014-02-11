@@ -8,9 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Utils : NSObject{    
+@interface Utils : NSObject
+{
     NSString *appErrorCode;
 }
+
+extern void APP42Log(NSString * format, ... ) NS_FORMAT_FUNCTION(1,2);
+
++(NSString*)getBaseURL;
++(void)setBaseURL:(NSString*)url;
++(NSString*)getCustomCodeURL;
+
+
++(NSString*)getLoggedInUser;
++(void)setLoggedInUser:(NSString*)user;
+
++(void)setCacheStoragePolicy:(NSURLRequestCachePolicy)cachePolicy;
++(NSURLRequestCachePolicy)getCacheStoragePolicy;
+
 +(NSString*)createSignatureFromDataDict:(NSMutableDictionary *)data andSecretKey:(NSString*)secretKey;
 +(NSString*)getUTCTimeFormattedStamp;
 +(NSString*)getUTCTimeFormattedStamp:(NSDate*)date;
@@ -26,5 +41,7 @@
 +(void)throwExceptionIfNotValidExtension:(NSString*)fileName name:(NSString*)name;
 +(void)throwExceptionIfNotValidImageExtension:(NSString*)fileName name:(NSString*)name;
 +(void)validateHowMany:(int)howMany;
++(void)enableApp42Log:(BOOL)isEnable;
+
 @end
 

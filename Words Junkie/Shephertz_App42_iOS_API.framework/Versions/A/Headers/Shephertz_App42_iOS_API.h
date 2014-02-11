@@ -13,6 +13,9 @@
 
 #import <Shephertz_App42_iOS_API/ServiceAPI.h>
 #import <Shephertz_App42_iOS_API/App42API.h>
+#import <Shephertz_App42_iOS_API/Utils.h>
+#import <Shephertz_App42_iOS_API/CustomCodeService.h>
+
 
 #import <Shephertz_App42_iOS_API/PushNotificationService.h>
 #import <Shephertz_App42_iOS_API/PushNotification.h>
@@ -97,6 +100,13 @@
 #import <Shephertz_App42_iOS_API/BuddyService.h>
 #import <Shephertz_App42_iOS_API/BuddyResponseBuilder.h>
 
+
+
+#import <Shephertz_App42_iOS_API/ABTest.h>
+#import <Shephertz_App42_iOS_API/Variant.h>
+#import <Shephertz_App42_iOS_API/ABTestService.h>
+#import <Shephertz_App42_iOS_API/ABTestResponseBuilder.h>
+
 #import <Shephertz_App42_iOS_API/Upload.h>
 #import <Shephertz_App42_iOS_API/UploadService.h>
 #import <Shephertz_App42_iOS_API/File.h>
@@ -114,10 +124,18 @@
 #import <Shephertz_App42_iOS_API/Game.h>
 #import <Shephertz_App42_iOS_API/GameService.h>
 #import <Shephertz_App42_iOS_API/Score.h>
+#import <Shephertz_App42_iOS_API/FacebookProfile.h>
 #import <Shephertz_App42_iOS_API/ScoreService.h>
 #import <Shephertz_App42_iOS_API/ScoreBoardService.h>
 #import <Shephertz_App42_iOS_API/Reward.h>
 #import <Shephertz_App42_iOS_API/RewardService.h>
+
+#import <Shephertz_App42_iOS_API/AvatarService.h>
+#import <Shephertz_App42_iOS_API/Avatar.h>
+
+#import <Shephertz_App42_iOS_API/Achievement.h>
+#import <Shephertz_App42_iOS_API/AchievementService.h>
+
 
 #import <Shephertz_App42_iOS_API/Image.h>
 #import <Shephertz_App42_iOS_API/ImageProcessorService.h>

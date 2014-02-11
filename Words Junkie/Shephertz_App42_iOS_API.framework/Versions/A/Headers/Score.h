@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "App42Response.h"
 @class Game;
-
+@class FacebookProfile;
 /**
  * An inner class that contains the remaining properties of the Game.
  *
@@ -49,6 +49,12 @@
  *set and get the gameObject for Score 
  */
 @property(nonatomic,retain)Game *gameObject;
+
+/*!
+ *set and get the gameObject for Score
+ */
+@property(nonatomic,retain) FacebookProfile *facebookProfile;
+
 
 - (id) init __attribute__((unavailable));
 

@@ -266,9 +266,26 @@
  * @throws App42Exception
  */
 -(Game*)getTopNRankersFromFacebook:(NSString*) gameName
-                          userName:(NSString*) userName
                      fbAccessToken:(NSString*)fbAccessToken
                                max:(int)max;
 
+/**
+ * This function returns the specified number of top rankers among facebook friends in specified
+ * range of dates for a specific game.
+ *
+ * @param gameName
+ *            - Name of the game
+ * @param fbAccessToken
+ * @param owerName
+ * @param endDate
+ * @param max
+ * @return Game Object
+ * @throws App42Exception
+ */
 
+-(Game*)getTopNRankersFromFacebook:(NSString*)gameName
+                     fbAccessToken:(NSString*)fbAccessToken
+                         startDate:(NSDate*)startDate
+                           endDate:(NSDate*)endDate
+                               max:(int)max;
 @end
