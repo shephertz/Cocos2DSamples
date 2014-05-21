@@ -92,6 +92,7 @@ static AppWarpHelper *appWarpHelper;
     
     WarpClient *warpClient = [WarpClient getInstance];
     [warpClient setRecoveryAllowance:60];
+    [warpClient enableTrace:YES];
     
     ConnectionListener *connectionListener = [[ConnectionListener alloc] initWithHelper:self];
     [warpClient addConnectionRequestListener:connectionListener];
@@ -113,7 +114,6 @@ static AppWarpHelper *appWarpHelper;
     [[WarpClient getInstance] unsubscribeRoom:roomId];
     [[WarpClient getInstance] leaveRoom:roomId];
     [[WarpClient getInstance] disconnect];
-    
 }
 
 -(void)connectToWarp
@@ -294,9 +294,9 @@ static AppWarpHelper *appWarpHelper;
 {
     if ([[WarpClient getInstance] getConnectionState]== CONNECTED)
     {
+        NSLog(@"%s",__FUNCTION__);
         [[WarpClient getInstance] sendUpdatePeers:data];
     }
-
 }
 
 

@@ -92,7 +92,7 @@
  * @param isLobby
  * @param username
  */
--(void) onUserPaused:(NSString*)userName withLocation:(NSString*)locId isLobby:(BOOL)isLobby;
+-(void)onUserPaused:(NSString*)userName withLocation:(NSString*)locId isLobby:(BOOL)isLobby;
 
 /**
  * Invoked when a user's connectivity is restored. Subscribers of the users location
@@ -101,7 +101,16 @@
  * @param isLobby
  * @param username
  */
--(void) onUserResumed:(NSString*)userName withLocation:(NSString*)locId isLobby:(BOOL)isLobby;
+-(void)onUserResumed:(NSString*)userName withLocation:(NSString*)locId isLobby:(BOOL)isLobby;
 
+/*
+ * Invoked when a user starts game in a turn based room
+ */
+-(void)onGameStarted:(NSString*)sender roomId:(NSString*)roomId  nextTurn:(NSString*)nextTurn;
+
+/*
+ * Invoked when a user stops game in a turn based room
+ */
+-(void)onGameStopped:(NSString*)sender roomId:(NSString*)roomId;
 
 @end

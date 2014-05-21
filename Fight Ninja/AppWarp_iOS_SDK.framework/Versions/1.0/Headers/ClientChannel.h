@@ -15,15 +15,24 @@
     NSInputStream   *inputStream;
     NSOutputStream  *outputStream;
     NSTimer         *keepAliveTimer;
+    NSTimer         *keepAliveUdpTimer;
     KeepAliveTask   *keepAliveTask;
+    KeepAliveTask   *keepAliveUdpTask;
+    BOOL            waitingForAck;
+    int             waitCounter;
     
 }
 @property (nonatomic, retain) KeepAliveTask     *keepAliveTask;
+@property (nonatomic, retain) KeepAliveTask     *keepAliveUdpTask;
 @property (nonatomic, retain) NSMutableArray    *list;
 @property (nonatomic, retain) NSMutableData     *incompleteData;
 @property (nonatomic, assign) BOOL              waitingForData;
 @property (nonatomic, retain) NSString          *warpServerHost;
 @property (nonatomic, assign) int               sessionId;
+@property (nonatomic, assign) int               waitCounter;
+@property (nonatomic, assign) BOOL              waitingForAck;
+@property (nonatomic, assign) int             countPendingKeepAlive;
+
 
 - (void)initNetworkCommunication;
 
@@ -31,5 +40,9 @@
 - (void)sendUdpData:(NSData*)data;
 - (void)disconnect;
 - (void)startKeepAlives;
+- (void)startUdpKeepAlives;
 - (void)invalidateKeepAliveTimer;
+- (void)invalidateUdpKeepAliveTimer;
+- (void)initUDP;
+- (void)checkForUdpRequestType:(Byte)requestType;
 @end

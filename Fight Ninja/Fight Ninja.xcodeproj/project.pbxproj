@@ -1287,7 +1287,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PROVISIONING_PROFILE = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				SDKROOT = iphoneos;
@@ -1309,7 +1309,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PROVISIONING_PROFILE = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D686E4F4-1364-44CE-9A5E-D5D0CE9786F6";
 				SDKROOT = iphoneos;
@@ -1331,10 +1331,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fight Ninja/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"Fight Ninja/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"Fight Ninja/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Fight Ninja/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1360,10 +1359,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fight Ninja/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"Fight Ninja/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"Fight Ninja/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Fight Ninja/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",

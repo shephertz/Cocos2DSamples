@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "WarpResponse.h"
 @interface MoveEvent : NSObject
 {
     
@@ -18,4 +18,5 @@
 @property(nonatomic,retain) NSString *roomId;
 
 +(MoveEvent*)buildMoveData:(NSDictionary*)notifyDict;
++(NSMutableArray*)buildMoveHistoryArray:(WarpResponse*)msg;
 @end

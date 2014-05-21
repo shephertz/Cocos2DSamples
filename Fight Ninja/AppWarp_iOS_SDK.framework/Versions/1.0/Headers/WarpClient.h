@@ -19,7 +19,7 @@
 @property(nonatomic,retain)NSString *apiKey;
 @property(nonatomic,retain)NSString *secretKey;
 @property(nonatomic,retain)NSString *userName;
-@property(nonatomic,retain)NSString *warpServerHost;
+//@property(nonatomic,retain)NSString *warpServerHost;
 
 
 /**
@@ -38,7 +38,6 @@
  * @return 
  */
 +(BOOL)initWarp:(NSString*)apiKey secretKey:(NSString*)secretKey;
-
 /**
  * This should be your first API call to WarpClient. This will instantiate
  * the WarpClient singleton and set it up to be used with the keys provided
@@ -48,6 +47,17 @@
  * @return
  */
 +(BOOL)initWarp:(NSString*)apiKey secretKey:(NSString*)secretKey hostAddress:(NSString*)hostAddress;
+
+/**
+ *This API checks if device has a full duplex UDP connection or not with the AppWarp server. 
+ *Incoming UDP Traffic may be blocked if the client is behind certain types of NATs(Network address translation). 
+ *It determines the connectivity by performing a 3-way handshake with the server over UDP and provides 
+ *the result in onInitUDPDone callbacks of the ConnectionRequestListener. 
+ *In case of lack of connectivity, the server will fall back to sending updates over TCP for the client. 
+ *Sending can continue over UDP irrespective.
+ **/
+-(void)initUDP;
+
 /**
  * Sends connection as well as authentication request to the WARP server 
  * with the given username string. The result of the operation
@@ -71,7 +81,7 @@
 -(void)onResponse:(WarpResponse*)response;
 -(void)onNotify:(WarpNotifyMessage*)notify;
 -(void)onConnect:(BOOL)value;
-
+-(void)fireUDPEvent:(Byte)resultCode;
 /**
  * sends a unsubscribe lobby request to the server. Result of the request is provided
  * in the onUnSubscribeLobbyDone callback of the LobbyListener.
@@ -184,7 +194,13 @@
  * @param roomId
  */
 -(void)joinRoom:(NSString*)roomId;
-
+/**
+ * Sends a join room request to the server with the condition that the room must have
+ * a matching set of property value pairs associated with it. This is useful in match making.
+ * Result of the request is provided in the onJoinRoomDone callback of the registered RoomRequestListener.
+ * @param properties
+ */
+-(void)joinRoomWithProperties:(NSDictionary*)properties;
 /**
  * sends a leave room request to the server. Result of the request is provided
  * in the onLeaveRoomDone callback of the RoomListener.
@@ -393,7 +409,7 @@
  * with the server. By default it is 0 so there is no connection recovery.
  */
 -(void)setRecoveryAllowance:(int) maxRecoveryTime;
--(void)setAutoRecovery:(BOOL) autoRecover;
+
 
 /* Attempts to reconnect and recover the session. May succeed if done within
  * the reconnect time limit negotiated during start up.
@@ -404,5 +420,29 @@
  * Enable or Disable trace to system.out. Default is disabled.
  */
 -(void)enableTrace:(BOOL)isEnable;
+
+/**
+ * sends a start game request to the server. Result of the request is
+ * provided in the onGameStarted callback of the TurnBasedRoomListener.
+ *
+ */
+-(void)startGame;
+
+/**
+ * sends a stop game request to the server. Result of the request is
+ * provided in the onGameStopped callback of the TurnBasedRoomListener.
+ *
+ */
+-(void)stopGame;
+
+/**
+ * sends a get move history request to the server. Result of the request is
+ * provided in the onGetMoveHistoryDone callback of the TurnBasedRoomListener.
+ */
+-(void)getMoveHistory;
+
+
+-(void)setGeo:(NSString*)_geo;
+-(void)setServer:(NSString*)server;
 
 @end
